@@ -8,6 +8,7 @@
 \usepackage{amssymb}
 \usepackage{extarrows}
 \usepackage{graphicx}
+
 \usepackage[backend=biber,
 style=numeric,
 sorting=none,
@@ -38,7 +39,8 @@ url=false,
 \usepackage[hidelinks]{hyperref}
 \usetikzlibrary{shapes.symbols,shapes.geometric,shadows,arrows.meta}
 \tikzset{>={Latex[width=1.5mm,length=2mm]}}
-\usepackage{flowchart}\usepackage[paperheight=11.0in,paperwidth=8.5in,left=1.0in,right=1.0in,top=1.0in,bottom=1.0in,headheight=1in]{geometry}
+\usepackage{flowchart}
+\usepackage[paperheight=11.0in,paperwidth=8.5in,left=1.0in,right=1.0in,top=1.0in,bottom=1.0in,headheight=1in]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \TabPositions{0.5in,1.0in,1.5in,2.0in,2.5in,3.0in,3.5in,4.0in,4.5in,5.0in,5.5in,6.0in,}
@@ -49,13 +51,6 @@ url=false,
 
 \renewcommand{\_}{\kern-1.5pt\textunderscore\kern-1.5pt}
 
- %%%%%%%%%%%%  Set Depths for Sections  %%%%%%%%%%%%%%
-
-% 1) Section
-% 1.1) SubSection
-% 1.1.1) SubSubSection
-% 1.1.1.1) Paragraph
-% 1.1.1.1.1) Subparagraph
 
 
 \setcounter{tocdepth}{5}
@@ -63,6 +58,7 @@ url=false,
 
 
  %%%%%%%%%%%%  Set Depths for Nested Lists created by \begin{enumerate}  %%%%%%%%%%%%%%
+\captionsetup[subfigure]{font=footnotesize}
 
 
 \setlistdepth{9}
@@ -91,17 +87,22 @@ url=false,
 \setlength{\topsep}{0pt}\setlength{\parskip}{8.04pt}
 \setlength{\parindent}{0pt}
 
- %%%%%%%%%%%%  This sets linespacing (verticle gap between Lines) Default=1 %%%%%%%%%%%%%%
 
 
 \renewcommand{\arraystretch}{1.3}
 
-\title{Course Project Description}
-\author{}
-\date{}
+\title{SoliGity}
+\author{  Roger Luo
+  \and
+  Zhenpeng Wu\\
+  28125152 
+  \and
+  Daniel Tong
+}
+
+\date{\today}
 
 
-%%%%%%%%%%%%%%%%%%%% Document code starts here %%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -109,22 +110,6 @@ url=false,
 
 \maketitle
 
-% \vspace{\baselineskip}
-% \par
-
-
-% \vspace{\baselineskip}
-\begin{Center}
-EECE 571G 
-\end{Center}\par
-
-\begin{Center}
-Blockchain Software Engineering
-\end{Center}\par
-
-\begin{Center}
-The University of British Columbia
-\end{Center}\par
 
 
 \vspace{\baselineskip}
@@ -205,6 +190,97 @@ If the sum of percentages over all team members exceeds 100$\%$  OR any student�
 \end{enumerate}
 	\item Appendix (Two forms in next two pages): 
 
+
+\includegraphics[height=7cm]{graphs/01. git_clone}
+
+\includegraphics[height=7cm]{graphs/02. yarn_install_backend}
+
+\includegraphics[height=7cm]{graphs/03. user_db_migrate} 
+
+\includegraphics[height=7cm]{graphs/04. yarn_install_frontend}
+
+\includegraphics[height=7cm]{graphs/05. truffle_compile}
+
+\includegraphics[height=7cm]{graphs/06. ganache_setup}
+
+\includegraphics[height=7cm]{graphs/07. truffle_migrate}
+
+\includegraphics[height=7cm]{graphs/08. ganache_deployed_contract}
+
+\includegraphics[height=7cm]{graphs/09. metamask_setup_network}
+
+\includegraphics[height=7cm]{graphs/10. metamask_setup_bob}
+
+\includegraphics[height=7cm]{graphs/11. metamask_setup_bob}
+
+\includegraphics[height=7cm]{graphs/12. metamask_setup_alice}
+
+\includegraphics[height=7cm]{graphs/13. metamask_setup_alice}
+
+\includegraphics[height=7cm]{graphs/14. yarn_start}
+
+\includegraphics[height=7cm]{graphs/15. alice_sign_up}
+
+\includegraphics[height=7cm]{graphs/16. alice_login}
+
+\includegraphics[height=7cm]{graphs/17. alice_gitub_setup}
+
+\includegraphics[height=7cm]{graphs/18. bob_sign_up}
+
+\includegraphics[height=7cm]{graphs/19. bob_login}
+
+\includegraphics[height=7cm]{graphs/20. bob_gitub_setup}
+
+\includegraphics[height=7cm]{graphs/21. alice_bob_repos}
+
+\includegraphics[height=7cm]{graphs/22. empty_project_catalog}
+
+\includegraphics[height=7cm]{graphs/23. alice_post_to_catalog_1}
+
+\includegraphics[height=7cm]{graphs/24. alice_post_to_catalog_2}
+
+\includegraphics[height=7cm]{graphs/25. added_project_catalog}
+
+\includegraphics[height=7cm]{graphs/26. alice_create_issue1}
+
+\includegraphics[height=7cm]{graphs/27. alice_create_issue2}
+
+\includegraphics[height=7cm]{graphs/28. soligity_issues}
+
+\includegraphics[height=7cm]{graphs/29. github_issues}
+
+\includegraphics[height=7cm]{graphs/30. project_catalog_bob_view}
+
+\includegraphics[height=7cm]{graphs/31. bob_fork_project}
+
+\includegraphics[height=7cm]{graphs/32. bob_forked_github}
+
+\includegraphics[height=7cm]{graphs/33. bob_make_changes}
+
+\includegraphics[height=7cm]{graphs/34. bob_review_request}
+
+\includegraphics[height=7cm]{graphs/35. bob_review_request_metamask}
+
+\includegraphics[height=7cm]{graphs/36. issue_info_updated}
+
+\includegraphics[height=7cm]{graphs/37. bob_pull_request_github}
+
+\includegraphics[height=7cm]{graphs/38. alice_reject_pull_request}
+
+\includegraphics[height=7cm]{graphs/39. issue_info_updated}
+
+\includegraphics[height=7cm]{graphs/40. alice_approve_pull_request}
+
+\includegraphics[height=7cm]{graphs/41. alice_metamask_confirm}
+
+\includegraphics[height=7cm]{graphs/42. alice_balance_updated}
+
+\includegraphics[height=7cm]{graphs/43. bob_balance_updated}
+
+\includegraphics[height=7cm]{graphs/44. pull_request_closed}
+
+\includegraphics[height=7cm]{graphs/45. issue_closed}
+
  %%%%%%%%%%%%  Starting New Page here %%%%%%%%%%%%%%
 
 \newpage
@@ -237,109 +313,11 @@ Team\ Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 \vspace{\baselineskip}
 
 
-%%%%%%%%%%%%%%%%%%%% Table No: 1 starts here %%%%%%%%%%%%%%%%%%%%
-
-
-% \begin{table}[H]
-%  			\centering
-% \begin{tabular}{p{0.88in}p{1.37in}p{1.67in}p{1.76in}}
-% \hline
-% %row no:1
-% \multicolumn{1}{|p{0.88in}}{\Centering Index} & 
-% \multicolumn{1}{|p{1.37in}}{\Centering Student No.} & 
-% \multicolumn{1}{|p{1.67in}}{\Centering First Name (Printed)} & 
-% \multicolumn{1}{|p{1.76in}|}{\Centering Last Name (Printed)} \\
-% \hhline{~~~~}
-% %row no:2
-% \multicolumn{1}{|p{0.88in}}{\Centering ①} & 
-% \multicolumn{1}{|p{1.37in}}{} & 
-% \multicolumn{1}{|p{1.67in}}{} & 
-% \multicolumn{1}{|p{1.76in}|}{} \\
-% \hhline{----}
-% %row no:3
-% \multicolumn{1}{|p{0.88in}}{\Centering ②} & 
-% \multicolumn{1}{|p{1.37in}}{} & 
-% \multicolumn{1}{|p{1.67in}}{} & 
-% \multicolumn{1}{|p{1.76in}|}{} \\
-% \hhline{----}
-% %row no:4
-% \multicolumn{1}{|p{0.88in}}{\Centering ③} & 
-% \multicolumn{1}{|p{1.37in}}{} & 
-% \multicolumn{1}{|p{1.67in}}{} & 
-% \multicolumn{1}{|p{1.76in}|}{} \\
-% \hhline{----}
-% %row no:5
-% \multicolumn{1}{|p{0.88in}}{\Centering ④} & 
-% \multicolumn{1}{|p{1.37in}}{} & 
-% \multicolumn{1}{|p{1.67in}}{} & 
-% \multicolumn{1}{|p{1.76in}|}{} \\
-% \hhline{----}
-% %row no:6
-% \multicolumn{1}{|p{0.88in}}{\Centering ⑤} & 
-% \multicolumn{1}{|p{1.37in}}{} & 
-% \multicolumn{1}{|p{1.67in}}{} & 
-% \multicolumn{1}{|p{1.76in}|}{} \\
-% \hhline{----}
-
-% \end{tabular}
-%  \end{table}
-
-
-%%%%%%%%%%%%%%%%%%%% Table No: 1 ends here %%%%%%%%%%%%%%%%%%%%
 
 
 \vspace{\baselineskip}
 
 
-%%%%%%%%%%%%%%%%%%%% Table No: 2 starts here %%%%%%%%%%%%%%%%%%%%
-
-
-% \begin{table}[H]
-%  			\centering
-% \begin{tabular}{p{1.96in}p{1.96in}p{1.96in}}
-% \hline
-% %row no:1
-% \multicolumn{1}{|p{1.96in}}{\Centering \textbf{Index}} & 
-% \multicolumn{1}{|p{1.96in}}{\Centering \textbf{Signature}} & 
-% \multicolumn{1}{|p{1.96in}|}{\Centering \textbf{Date}} \\
-% \hhline{---}
-% %row no:2
-% \multicolumn{1}{|p{1.96in}}{\Centering ①} & 
-% \multicolumn{1}{|p{1.96in}}{} & 
-% \multicolumn{1}{|p{1.96in}|}{} \\
-% \hhline{---}
-% %row no:3
-% \multicolumn{1}{|p{1.96in}}{\Centering ②} & 
-% \multicolumn{1}{|p{1.96in}}{} & 
-% \multicolumn{1}{|p{1.96in}|}{} \\
-% \hhline{---}
-% %row no:4
-% \multicolumn{1}{|p{1.96in}}{\Centering ③} & 
-% \multicolumn{1}{|p{1.96in}}{} & 
-% \multicolumn{1}{|p{1.96in}|}{} \\
-% \hhline{---}
-% %row no:5
-% \multicolumn{1}{|p{1.96in}}{\Centering ④} & 
-% \multicolumn{1}{|p{1.96in}}{} & 
-% \multicolumn{1}{|p{1.96in}|}{} \\
-% \hhline{---}
-% %row no:6
-% \multicolumn{1}{|p{1.96in}}{\Centering ⑤} & 
-% \multicolumn{1}{|p{1.96in}}{} & 
-% \multicolumn{1}{|p{1.96in}|}{} \\
-% \hhline{---}
-
-% \end{tabular}
-%  \end{table}
-
-
-%%%%%%%%%%%%%%%%%%%% Table No: 2 ends here %%%%%%%%%%%%%%%%%%%%
-
-
-\vspace{\baselineskip}
-
-
- %%%%%%%%%%%%  Starting New Page here %%%%%%%%%%%%%%
 
 \newpage
 
@@ -371,109 +349,6 @@ Team\ Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 \vspace{\baselineskip}
 
 
-%%%%%%%%%%%%%%%%%%%% Table No: 3 starts here %%%%%%%%%%%%%%%%%%%%
-
-
-% \begin{table}[H]
-%  			\centering
-% \begin{tabular}{p{0.88in}p{1.37in}p{1.67in}p{1.76in}}
-% \hline
-% %row no:1
-% \multicolumn{1}{|p{0.88in}}{\Centering Index} & 
-% \multicolumn{1}{|p{1.37in}}{\Centering Student No.} & 
-% \multicolumn{1}{|p{1.67in}}{\Centering First Name (Printed)} & 
-% \multicolumn{1}{|p{1.76in}|}{\Centering Last Name (Printed)} \\
-% \hhline{~~~~}
-% %row no:2
-% \multicolumn{1}{|p{0.88in}}{\Centering ①} & 
-% \multicolumn{1}{|p{1.37in}}{} & 
-% \multicolumn{1}{|p{1.67in}}{} & 
-% \multicolumn{1}{|p{1.76in}|}{} \\
-% \hhline{----}
-% %row no:3
-% \multicolumn{1}{|p{0.88in}}{\Centering ②} & 
-% \multicolumn{1}{|p{1.37in}}{} & 
-% \multicolumn{1}{|p{1.67in}}{} & 
-% \multicolumn{1}{|p{1.76in}|}{} \\
-% \hhline{----}
-% %row no:4
-% \multicolumn{1}{|p{0.88in}}{\Centering ③} & 
-% \multicolumn{1}{|p{1.37in}}{} & 
-% \multicolumn{1}{|p{1.67in}}{} & 
-% \multicolumn{1}{|p{1.76in}|}{} \\
-% \hhline{----}
-% %row no:5
-% \multicolumn{1}{|p{0.88in}}{\Centering ④} & 
-% \multicolumn{1}{|p{1.37in}}{} & 
-% \multicolumn{1}{|p{1.67in}}{} & 
-% \multicolumn{1}{|p{1.76in}|}{} \\
-% \hhline{----}
-% %row no:6
-% \multicolumn{1}{|p{0.88in}}{\Centering ⑤} & 
-% \multicolumn{1}{|p{1.37in}}{} & 
-% \multicolumn{1}{|p{1.67in}}{} & 
-% \multicolumn{1}{|p{1.76in}|}{} \\
-% \hhline{----}
-
-% \end{tabular}
-%  \end{table}
-
-
-%%%%%%%%%%%%%%%%%%%% Table No: 3 ends here %%%%%%%%%%%%%%%%%%%%
-
-
-\vspace{\baselineskip}
-
-
-%%%%%%%%%%%%%%%%%%%% Table No: 4 starts here %%%%%%%%%%%%%%%%%%%%
-
-
-% \begin{table}[H]
-%  			\centering
-% \begin{tabular}{p{1.44in}p{1.31in}p{1.53in}p{1.41in}}
-% \hline
-% %row no:1
-% \multicolumn{1}{|p{1.44in}}{\Centering \textbf{Index}} & 
-% \multicolumn{1}{|p{1.31in}}{\Centering \textbf{Percentage}} & 
-% \multicolumn{1}{|p{1.53in}}{\Centering \textbf{Signature}} & 
-% \multicolumn{1}{|p{1.41in}|}{\Centering \textbf{Date}} \\
-% \hhline{----}
-% %row no:2
-% \multicolumn{1}{|p{1.44in}}{\Centering ①} & 
-% \multicolumn{1}{|p{1.31in}}{} & 
-% \multicolumn{1}{|p{1.53in}}{} & 
-% \multicolumn{1}{|p{1.41in}|}{} \\
-% \hhline{----}
-% %row no:3
-% \multicolumn{1}{|p{1.44in}}{\Centering ②} & 
-% \multicolumn{1}{|p{1.31in}}{} & 
-% \multicolumn{1}{|p{1.53in}}{} & 
-% \multicolumn{1}{|p{1.41in}|}{} \\
-% \hhline{----}
-% %row no:4
-% \multicolumn{1}{|p{1.44in}}{\Centering ③} & 
-% \multicolumn{1}{|p{1.31in}}{} & 
-% \multicolumn{1}{|p{1.53in}}{} & 
-% \multicolumn{1}{|p{1.41in}|}{} \\
-% \hhline{----}
-% %row no:5
-% \multicolumn{1}{|p{1.44in}}{\Centering ④} & 
-% \multicolumn{1}{|p{1.31in}}{} & 
-% \multicolumn{1}{|p{1.53in}}{} & 
-% \multicolumn{1}{|p{1.41in}|}{} \\
-% \hhline{----}
-% %row no:6
-% \multicolumn{1}{|p{1.44in}}{\Centering ⑤} & 
-% \multicolumn{1}{|p{1.31in}}{} & 
-% \multicolumn{1}{|p{1.53in}}{} & 
-% \multicolumn{1}{|p{1.41in}|}{} \\
-% \hhline{----}
-
-% \end{tabular}
-%  \end{table}
-
-
-%%%%%%%%%%%%%%%%%%%% Table No: 4 ends here %%%%%%%%%%%%%%%%%%%%
 
 
 \vspace{\baselineskip}
