@@ -1,0 +1,482 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{amsfonts}
+\usepackage[normalem]{ulem}
+\usepackage{soul}
+\usepackage{array}
+\usepackage{amssymb}
+\usepackage{extarrows}
+\usepackage{graphicx}
+\usepackage[backend=biber,
+style=numeric,
+sorting=none,
+isbn=false,
+doi=false,
+url=false,
+]{biblatex}\addbibresource{bibliography.bib}
+
+\usepackage{subfig}
+\usepackage{wrapfig}
+\usepackage{wasysym}
+\usepackage{enumitem}
+\usepackage{adjustbox}
+\usepackage{ragged2e}
+\usepackage[svgnames,table]{xcolor}
+\usepackage{tikz}
+\usepackage{longtable}
+\usepackage{changepage}
+\usepackage{setspace}
+\usepackage{hhline}
+\usepackage{multicol}
+\usepackage{tabto}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{fancyhdr}
+\usepackage[toc,page]{appendix}
+\usepackage[hidelinks]{hyperref}
+\usetikzlibrary{shapes.symbols,shapes.geometric,shadows,arrows.meta}
+\tikzset{>={Latex[width=1.5mm,length=2mm]}}
+\usepackage{flowchart}\usepackage[paperheight=11.0in,paperwidth=8.5in,left=1.0in,right=1.0in,top=1.0in,bottom=1.0in,headheight=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\TabPositions{0.5in,1.0in,1.5in,2.0in,2.5in,3.0in,3.5in,4.0in,4.5in,5.0in,5.5in,6.0in,}
+
+\urlstyle{same}
+
+\renewcommand{\baselinestretch}{1.3}
+
+\renewcommand{\_}{\kern-1.5pt\textunderscore\kern-1.5pt}
+
+ %%%%%%%%%%%%  Set Depths for Sections  %%%%%%%%%%%%%%
+
+% 1) Section
+% 1.1) SubSection
+% 1.1.1) SubSubSection
+% 1.1.1.1) Paragraph
+% 1.1.1.1.1) Subparagraph
+
+
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+
+
+ %%%%%%%%%%%%  Set Depths for Nested Lists created by \begin{enumerate}  %%%%%%%%%%%%%%
+
+
+\setlistdepth{9}
+\renewlist{enumerate}{enumerate}{9}
+		\setlist[enumerate,1]{label=\arabic*)}
+		\setlist[enumerate,2]{label=\alph*)}
+		\setlist[enumerate,3]{label=(\roman*)}
+		\setlist[enumerate,4]{label=(\arabic*)}
+		\setlist[enumerate,5]{label=(\Alph*)}
+		\setlist[enumerate,6]{label=(\Roman*)}
+		\setlist[enumerate,7]{label=\arabic*}
+		\setlist[enumerate,8]{label=\alph*}
+		\setlist[enumerate,9]{label=\roman*}
+
+\renewlist{itemize}{itemize}{9}
+		\setlist[itemize]{label=$\cdot$}
+		\setlist[itemize,1]{label=\textbullet}
+		\setlist[itemize,2]{label=$\circ$}
+		\setlist[itemize,3]{label=$\ast$}
+		\setlist[itemize,4]{label=$\dagger$}
+		\setlist[itemize,5]{label=$\triangleright$}
+		\setlist[itemize,6]{label=$\bigstar$}
+		\setlist[itemize,7]{label=$\blacklozenge$}
+		\setlist[itemize,8]{label=$\prime$}
+
+\setlength{\topsep}{0pt}\setlength{\parskip}{8.04pt}
+\setlength{\parindent}{0pt}
+
+ %%%%%%%%%%%%  This sets linespacing (verticle gap between Lines) Default=1 %%%%%%%%%%%%%%
+
+
+\renewcommand{\arraystretch}{1.3}
+
+\title{Course Project Description}
+\author{}
+\date{}
+
+
+%%%%%%%%%%%%%%%%%%%% Document code starts here %%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+
+\maketitle
+
+% \vspace{\baselineskip}
+% \par
+
+
+% \vspace{\baselineskip}
+\begin{Center}
+EECE 571G 
+\end{Center}\par
+
+\begin{Center}
+Blockchain Software Engineering
+\end{Center}\par
+
+\begin{Center}
+The University of British Columbia
+\end{Center}\par
+
+
+\vspace{\baselineskip}
+\begin{enumerate}
+	\item Introduction\par
+
+The course project of EECE571G is to let you try your best to build a decentralized application (DApp). As this is graduate course, students are expected to form a software development team to do this project. \par
+
+	\item Requirement\par
+
+\begin{enumerate}
+	\item Team Building\par
+
+\begin{enumerate}
+	\item The project is a team-based project (i.e. group project). We have 3 $ \sim $  5 students in each team. A team should have at least 3 students. \par
+
+	\item Please print the team form given you in the appendix of this document out and the members of each team need to fill the form and give their signatures properly. The team should submit the form in the midterm week.\par
+
+	\item Certainly, every student can join at most one group. \par
+
+
+\end{enumerate}
+	\item Contents\par
+
+\begin{enumerate}
+	\item Think about a simple application to develop with the blockchain technology.\  \par
+
+	\item Setup the development environment \par
+
+The team needs to setup the \textbf{\uline{Truffle + React + Web3js}} development environments. \par
+
+	\item Each group should create a project on GitHub and put your project on the GitHub. In the end of the term, please send me the link of your project repository on GitHub. \par
+
+	\item Your project should be runnable and functional.\par
+
+	\item In your Assignment 2 (which is group based), please submit the follows:\par
+
+\begin{enumerate}
+	\item \textbf{\uline{The whitepaper}} of your project (i.e., a document describes the application). \par
+
+	\item The \textbf{\uline{wireframe}}.\par
+
+	\item The \textbf{\uline{smart contract code}}.\par
+
+	\item The \textbf{\uline{test code for your smart contract}}.\par
+
+
+\end{enumerate}
+	\item Project demo and final report submission are needed in the end.\par
+
+
+\end{enumerate}
+\end{enumerate}
+	\item Evaluation\par
+
+\begin{enumerate}
+	\item Presentation\par
+
+In the \textbf{\uline{very last week}}, we have a presentation course. The presentation takes 70$\%$  of your project evaluation. \par
+
+	\item Report\par
+
+The report should be at least 20 pages of main contents in Letter paper, Font Size = 12, 1.5 times line spacing, with Normal margin in \textbf{\uline{MS Word}} (2.54 cm for all sides). Pictures (like screenshots) are encouraged in the report, but the number of pictures cannot exceed 15 and the size of picture should meet the following requirements (Height < 8cm and Width < 14cm).\par
+
+\textbf{\uline{Violation with any of the above rules may result in the deduction of your project marks}}.\par
+
+	\item Fairness\par
+
+Each team should fill in a Peer-to-Peer evaluation form for fairness purposes.\par
+
+Each team member will receive the inner-team evaluation for his/her contributions of the course project in a percentage. That is, the sum of all members’ percentage marks \textbf{\uline{should NOT exceed 100}}$\%$ , and ALL team member should sign clearly to show that they have reached an agreement.\par
+
+If the sum of percentages over all team members exceeds 100$\%$  OR any student’s signature is missing, the form is INVALID. The form should be submitted together with the course project report on the project presentation day.\par
+
+
+\vspace{\baselineskip}
+
+\end{enumerate}
+	\item Appendix (Two forms in next two pages): 
+
+ %%%%%%%%%%%%  Starting New Page here %%%%%%%%%%%%%%
+
+\newpage
+
+\end{enumerate}\par
+
+\textbf{Course Project Team Form}\par
+
+
+\vspace{\baselineskip}
+\begin{Center}
+EECE 571G 
+\end{Center}\par
+
+\begin{Center}
+Blockchain Software Engineering
+\end{Center}\par
+
+\begin{Center}
+The University of British Columbia
+\end{Center}\par
+
+
+\vspace{\baselineskip}
+\begin{Center}
+Team\ Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ 
+\end{Center}\par
+
+
+\vspace{\baselineskip}
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 1 starts here %%%%%%%%%%%%%%%%%%%%
+
+
+% \begin{table}[H]
+%  			\centering
+% \begin{tabular}{p{0.88in}p{1.37in}p{1.67in}p{1.76in}}
+% \hline
+% %row no:1
+% \multicolumn{1}{|p{0.88in}}{\Centering Index} & 
+% \multicolumn{1}{|p{1.37in}}{\Centering Student No.} & 
+% \multicolumn{1}{|p{1.67in}}{\Centering First Name (Printed)} & 
+% \multicolumn{1}{|p{1.76in}|}{\Centering Last Name (Printed)} \\
+% \hhline{~~~~}
+% %row no:2
+% \multicolumn{1}{|p{0.88in}}{\Centering ①} & 
+% \multicolumn{1}{|p{1.37in}}{} & 
+% \multicolumn{1}{|p{1.67in}}{} & 
+% \multicolumn{1}{|p{1.76in}|}{} \\
+% \hhline{----}
+% %row no:3
+% \multicolumn{1}{|p{0.88in}}{\Centering ②} & 
+% \multicolumn{1}{|p{1.37in}}{} & 
+% \multicolumn{1}{|p{1.67in}}{} & 
+% \multicolumn{1}{|p{1.76in}|}{} \\
+% \hhline{----}
+% %row no:4
+% \multicolumn{1}{|p{0.88in}}{\Centering ③} & 
+% \multicolumn{1}{|p{1.37in}}{} & 
+% \multicolumn{1}{|p{1.67in}}{} & 
+% \multicolumn{1}{|p{1.76in}|}{} \\
+% \hhline{----}
+% %row no:5
+% \multicolumn{1}{|p{0.88in}}{\Centering ④} & 
+% \multicolumn{1}{|p{1.37in}}{} & 
+% \multicolumn{1}{|p{1.67in}}{} & 
+% \multicolumn{1}{|p{1.76in}|}{} \\
+% \hhline{----}
+% %row no:6
+% \multicolumn{1}{|p{0.88in}}{\Centering ⑤} & 
+% \multicolumn{1}{|p{1.37in}}{} & 
+% \multicolumn{1}{|p{1.67in}}{} & 
+% \multicolumn{1}{|p{1.76in}|}{} \\
+% \hhline{----}
+
+% \end{tabular}
+%  \end{table}
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 1 ends here %%%%%%%%%%%%%%%%%%%%
+
+
+\vspace{\baselineskip}
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 2 starts here %%%%%%%%%%%%%%%%%%%%
+
+
+% \begin{table}[H]
+%  			\centering
+% \begin{tabular}{p{1.96in}p{1.96in}p{1.96in}}
+% \hline
+% %row no:1
+% \multicolumn{1}{|p{1.96in}}{\Centering \textbf{Index}} & 
+% \multicolumn{1}{|p{1.96in}}{\Centering \textbf{Signature}} & 
+% \multicolumn{1}{|p{1.96in}|}{\Centering \textbf{Date}} \\
+% \hhline{---}
+% %row no:2
+% \multicolumn{1}{|p{1.96in}}{\Centering ①} & 
+% \multicolumn{1}{|p{1.96in}}{} & 
+% \multicolumn{1}{|p{1.96in}|}{} \\
+% \hhline{---}
+% %row no:3
+% \multicolumn{1}{|p{1.96in}}{\Centering ②} & 
+% \multicolumn{1}{|p{1.96in}}{} & 
+% \multicolumn{1}{|p{1.96in}|}{} \\
+% \hhline{---}
+% %row no:4
+% \multicolumn{1}{|p{1.96in}}{\Centering ③} & 
+% \multicolumn{1}{|p{1.96in}}{} & 
+% \multicolumn{1}{|p{1.96in}|}{} \\
+% \hhline{---}
+% %row no:5
+% \multicolumn{1}{|p{1.96in}}{\Centering ④} & 
+% \multicolumn{1}{|p{1.96in}}{} & 
+% \multicolumn{1}{|p{1.96in}|}{} \\
+% \hhline{---}
+% %row no:6
+% \multicolumn{1}{|p{1.96in}}{\Centering ⑤} & 
+% \multicolumn{1}{|p{1.96in}}{} & 
+% \multicolumn{1}{|p{1.96in}|}{} \\
+% \hhline{---}
+
+% \end{tabular}
+%  \end{table}
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 2 ends here %%%%%%%%%%%%%%%%%%%%
+
+
+\vspace{\baselineskip}
+
+
+ %%%%%%%%%%%%  Starting New Page here %%%%%%%%%%%%%%
+
+\newpage
+
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+\textbf{Course Project Peer-to-Peer Evaluation Form}\par
+
+
+\vspace{\baselineskip}
+\begin{Center}
+EECE 571G 
+\end{Center}\par
+
+\begin{Center}
+Blockchain Software Engineering
+\end{Center}\par
+
+\begin{Center}
+The University of British Columbia
+\end{Center}\par
+
+
+\vspace{\baselineskip}
+\begin{Center}
+Team\ Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ 
+\end{Center}\par
+
+
+\vspace{\baselineskip}
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 3 starts here %%%%%%%%%%%%%%%%%%%%
+
+
+% \begin{table}[H]
+%  			\centering
+% \begin{tabular}{p{0.88in}p{1.37in}p{1.67in}p{1.76in}}
+% \hline
+% %row no:1
+% \multicolumn{1}{|p{0.88in}}{\Centering Index} & 
+% \multicolumn{1}{|p{1.37in}}{\Centering Student No.} & 
+% \multicolumn{1}{|p{1.67in}}{\Centering First Name (Printed)} & 
+% \multicolumn{1}{|p{1.76in}|}{\Centering Last Name (Printed)} \\
+% \hhline{~~~~}
+% %row no:2
+% \multicolumn{1}{|p{0.88in}}{\Centering ①} & 
+% \multicolumn{1}{|p{1.37in}}{} & 
+% \multicolumn{1}{|p{1.67in}}{} & 
+% \multicolumn{1}{|p{1.76in}|}{} \\
+% \hhline{----}
+% %row no:3
+% \multicolumn{1}{|p{0.88in}}{\Centering ②} & 
+% \multicolumn{1}{|p{1.37in}}{} & 
+% \multicolumn{1}{|p{1.67in}}{} & 
+% \multicolumn{1}{|p{1.76in}|}{} \\
+% \hhline{----}
+% %row no:4
+% \multicolumn{1}{|p{0.88in}}{\Centering ③} & 
+% \multicolumn{1}{|p{1.37in}}{} & 
+% \multicolumn{1}{|p{1.67in}}{} & 
+% \multicolumn{1}{|p{1.76in}|}{} \\
+% \hhline{----}
+% %row no:5
+% \multicolumn{1}{|p{0.88in}}{\Centering ④} & 
+% \multicolumn{1}{|p{1.37in}}{} & 
+% \multicolumn{1}{|p{1.67in}}{} & 
+% \multicolumn{1}{|p{1.76in}|}{} \\
+% \hhline{----}
+% %row no:6
+% \multicolumn{1}{|p{0.88in}}{\Centering ⑤} & 
+% \multicolumn{1}{|p{1.37in}}{} & 
+% \multicolumn{1}{|p{1.67in}}{} & 
+% \multicolumn{1}{|p{1.76in}|}{} \\
+% \hhline{----}
+
+% \end{tabular}
+%  \end{table}
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 3 ends here %%%%%%%%%%%%%%%%%%%%
+
+
+\vspace{\baselineskip}
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 4 starts here %%%%%%%%%%%%%%%%%%%%
+
+
+% \begin{table}[H]
+%  			\centering
+% \begin{tabular}{p{1.44in}p{1.31in}p{1.53in}p{1.41in}}
+% \hline
+% %row no:1
+% \multicolumn{1}{|p{1.44in}}{\Centering \textbf{Index}} & 
+% \multicolumn{1}{|p{1.31in}}{\Centering \textbf{Percentage}} & 
+% \multicolumn{1}{|p{1.53in}}{\Centering \textbf{Signature}} & 
+% \multicolumn{1}{|p{1.41in}|}{\Centering \textbf{Date}} \\
+% \hhline{----}
+% %row no:2
+% \multicolumn{1}{|p{1.44in}}{\Centering ①} & 
+% \multicolumn{1}{|p{1.31in}}{} & 
+% \multicolumn{1}{|p{1.53in}}{} & 
+% \multicolumn{1}{|p{1.41in}|}{} \\
+% \hhline{----}
+% %row no:3
+% \multicolumn{1}{|p{1.44in}}{\Centering ②} & 
+% \multicolumn{1}{|p{1.31in}}{} & 
+% \multicolumn{1}{|p{1.53in}}{} & 
+% \multicolumn{1}{|p{1.41in}|}{} \\
+% \hhline{----}
+% %row no:4
+% \multicolumn{1}{|p{1.44in}}{\Centering ③} & 
+% \multicolumn{1}{|p{1.31in}}{} & 
+% \multicolumn{1}{|p{1.53in}}{} & 
+% \multicolumn{1}{|p{1.41in}|}{} \\
+% \hhline{----}
+% %row no:5
+% \multicolumn{1}{|p{1.44in}}{\Centering ④} & 
+% \multicolumn{1}{|p{1.31in}}{} & 
+% \multicolumn{1}{|p{1.53in}}{} & 
+% \multicolumn{1}{|p{1.41in}|}{} \\
+% \hhline{----}
+% %row no:6
+% \multicolumn{1}{|p{1.44in}}{\Centering ⑤} & 
+% \multicolumn{1}{|p{1.31in}}{} & 
+% \multicolumn{1}{|p{1.53in}}{} & 
+% \multicolumn{1}{|p{1.41in}|}{} \\
+% \hhline{----}
+
+% \end{tabular}
+%  \end{table}
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 4 ends here %%%%%%%%%%%%%%%%%%%%
+
+
+\vspace{\baselineskip}
+
+\printbibliography
+\end{document}
