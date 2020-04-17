@@ -58,17 +58,22 @@
 
 	\item \textbf{Use Case Workflow} \par
     SoliGity aims to provide a friendly, intuitive experience end-to-end in between the open-source project owner and the developers. It integrates with the Git seamlessly in the way that extra steps are minimized. Since it is a web-based platform with Github integration, both project owners and developers need to sign up for an account and associate it with their Github account prior to taking advantage of our services. Note that the account is general-purpose. A user can act as both the project owner and the developer using the same account - he/she can own a project and seek others’ help while helping with other people’s projects as developers. Our project also assumes that the user’s computer is properly configured with an Ethereum account as well as Meta Mask - A crypto wallet & gateway that provides the user with a wallet to store and transact his/her Ethereum and Ethereum-based tokens through a web browser. 
+    
+     \includegraphics[width=16cm]{graphs/00a. workflow.jpeg}\\
+     \includegraphics[width=16cm]{graphs/00b. workflow.jpeg}
+    
 	      \begin{enumerate}
 	      
 		      \item \textbf{Step 1. Post Project}\par
-
-                As mentioned earlier, the SoliGity account is associated with the user’s Github account. Once configured, the user can access the list of their own repositories (Figure Xa). To have one of their repositories being discovered by everyone on the platform, the project owner must link/add this repo to the project catalog (Figure Xb). For every project in the catalog, any user can create issues (Figure Xc). All issues created within SoliGity will be book-kept in the SoliGity blockchain DApp, and they will be propagated to Github as regular Github issues using Github APIs. While creating an issue, SoliGity also prompts the user for a price - the amount of cryptocurrency that the project owner will award to the developer when the work is approved. \par
+                
+                As mentioned earlier, the SoliGity account is associated with the user’s Github account. Once configured, the user can access the list of their own repositories (Figure Xa). To have one of their repositories being discovered by everyone on the platform, the project owner must link/add this repo to the project catalog (Figure Xb). For every project in the catalog, any user can create issues (Figure Xc). All issues created within SoliGity will be book-kept in the SoliGity blockchain DApp, and they will be propagated to Github as regular Github issues using Github APIs. While creating an issue, SoliGity also prompts the user for a price - the amount of cryptocurrency that the project owner will award to the developer when the work is approved. Each issue also comes with a status tracked by the DApp - \textit{Accepting Contributions}, \textit{Pending Approval}, and \textit{Done}. In this stage, a newly-opened issue is in \textit{Accepting Contribution} status. \par
                 
 		      \item \textbf{Step 2. Discover Project}\par
 		      Once the projects are posted on the catalog, everyone can discover them. We envision an interface that looks like an AppStore, displaying project information in rich details such as project name, pictures, languages & frameworks etc. The intuitive, friendly experience will be of great benefit for these entry-level developers and students to quickly become interested in a project. The project description page (Figure Xc.) displays the issues (note: issues are not limited to bugs - they can also be new features and feasibility studies) that’s available for anyone to pick up and make contributions. 
 
 		           
 		     \item \textbf{Step 3. Making Contribution}\par
+		     Once the developer finds an issue to work on, he/she must fork the repository to their own GitHub account. We provide a button shortcut to help the developer fork the repo without leaving SoliGity. Then, the development process is identical to regular Git workflow - the developer commits and pushes the work to their forked repo, then makes a pull request when the work is done (Figure Xc). Note that the review request is made in SoliGity - this makes sure that both our DApp and Github are aware of this activity. On SoliGity, the issue status will be changed to \textit{Pending Approval} from \textit{Accepting Contribution}; on Github, a pull request will be made for the project owner to review the code changes. \par
 		     
 		     \item \textbf{Step 4. Rewarding Contribution}\par
 		     
