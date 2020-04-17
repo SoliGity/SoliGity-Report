@@ -11,12 +11,15 @@
 \renewcommand{\arraystretch}{1.3}
 
 \title{SoliGity}
-\author{  Roger Luo
+\author{  
+  Roger Luo\\
+  45323136
   \and
   Zhenpeng Wu\\
   28125152 
   \and
-  Daniel Tong
+  Zitian Tong
+  41439143
 }
 
 \date{\today}
@@ -26,84 +29,101 @@
 
 \maketitle
 
-
+\pagebreak
 
 \vspace{\baselineskip}
 \begin{enumerate}
-	\item Introduction\par
+	\item \textbf{Introduction}\par
 
-	      The course project of EECE571G is to let you try your best to build a decentralized application (DApp). As this is graduate course, students are expected to form a software development team to do this project. \par
+        Today, the open-source community is thriving rapidly, creating a synergistic environment to allow individuals from all over the world to learn from each other and to create software that can create significant impacts. Although much of open source work is volunteered, there are many reasons that an open-source developer deserves rewards or incentives for their contributions, especially if the project is complex and time-consuming \cite{coin_center}.   \par
 
-	\item Requirement\par
+        Apart from the complexity of an open-source project that rewarding mechanisms may apply, we suggest that one particular group, students, also deserve incentives for their contributions. Research has found that open-source projects play an important role in university students’ success \cite{blockchain_pulse_ibm_blockchain_blog_2020}. We surveyed 50 students majoring in EECS (Electrical Engineering and Computer Science), over 75\% of them consider finding an internship job as one of their highest priorities. Standing out from a large pool of applicants, however, requires students to work on side projects. Furthermore, over 50\% of the students find it difficult to discover and identify the projects that interest them; even for those who do find an interesting project, 62\% of them found it hard to stay motivated [3]. More importantly, the contributors of open-source projects suggest they deserve more recognition for their work [4]. \par
 
+        Currently, getting paid or rewarded to work on open source projects still relies on a traditional form of funding mechanism such as crowdfunding campaigns or sponsorships [2]. These mechanisms, however, involve a long chain of decision-making processes: First, the project owner/creators will post their projects or ideas on a third-party platform such as OpenCollective, Patreon, and Rekonse. These platforms usually act as a middleman, keeping a ledger between the sponsor and the project owner to inform each other how the money flows. Then, the money raised from the crowd will go through multiple layers of committee members to identify and decide which feature/issue the money should be spent on. The time it takes for the fund to reach a developer is unnecessarily long. Depending on how the project is managed, it might not be transparent to the developers that the fund from the sponsor is reasonably and fairly distributed, based on their share of contributions. More importantly, these crowd-funding models only work well if the project is already very complex, well-known and has a strong audience - it’s almost impossible to establish a fine-grained transaction between a developer and a project owner on per-issue or per-feature bases. It is less likely for a broader group of community members (e.g. students and entry-level developers) to get involved in these crowded-funded open-sources projects. Furthermore, the transaction of the fund using conventional currencies (mostly USD) has to go through credit card services, meaning that there are overheads such as currency exchange, processing time, and transaction fees.\par
+        
+        In summary, we argue that there are two pain points in the open-source developer community:
+        
+        \begin{enumerate}
+        \item There is a lack of a unified, purposeful platform that provides an end-to-end experience to help developers in the open-source community discover open-source projects to work on, especially for entry-level developers. \par
+
+        \item Getting paid or rewarded by working on open-source projects still relies on a conventional crowd-funding/sponsorship model that does not achieve an optimal level of flexibility, efficiency, security, and transparency. \par
+        
+        \end{enumerate}
+        
+        We attempt to address these pain points by leveraging web technologies, Git source control, and blockchain decentralized application (DApp) to create a novel platform - SoliGity to establish a closer connection with repository owners and contributors. Developers have the opportunities to discover interesting projects, make contributions and get rewarded from the project owners. \par
+        
+        Blockchain technologies are of a great fit to address these pain points - unlike a conventional centralized ledger keeping track of the transaction, blockchain is a type of distributed ledger, all network participants share the same ledger and the shared version can only be updated when everyone agrees on it [6]. This ensures that the sponsor and the developer will have accurate, consistent and transparent information on the transactions between them. Blockchain also increases the efficiency and speed of trading, eliminating the need for third-party mediation and avoiding human error. Unlike the traditional server-client architecture, where the server might shut down unexpectedly, a decentralized blockchain system has no central point of failure, as it is being run from thousands of volunteers’ computers around the globe, meaning that it can never go offline. For us, it means the management and maintenance costs are dramatically reduced.  [7] Blockchain also ensures the security and traceability of the record-keeping. \par
+        
+        Our project is developed based on the Ethereum (ETH) platform using a smart contract written in Solidity - an object-oriented, high-level language for implementing smart contracts. As the second-largest cryptocurrency in the world, ETH has the benefit of Bitcoin (BTC) but it further leverages the properties of decentralization by introducing smart contracts and Ethereum virtual machine (EVM). Ethereum is a multipurpose platform where its digital currency ETH is just a component of its smart contract application. In the subsequent sections we will discuss in detail how we implement the DApp in Solidity in the context of Git workflow (hence our name SoliGity) to achieve an efficient transaction workflow between the project owner and the developer. \par
+
+	\item \textbf{Use Case Workflow} \par
+    SoliGity aims to provide a friendly, intuitive experience end-to-end in between the open-source project owner and the developers. It integrates with the Git seamlessly in the way that extra steps are minimized. Since it is a web-based platform with Github integration, both project owners and developers need to sign up for an account and associate it with their Github account prior to taking advantage of our services. Note that the account is general-purpose. A user can act as both the project owner and the developer using the same account - he/she can own a project and seek others’ help while helping with other people’s projects as developers. Our project also assumes that the user’s computer is properly configured with an Ethereum account as well as Meta Mask - A crypto wallet & gateway that provides the user with a wallet to store and transact his/her Ethereum and Ethereum-based tokens through a web browser. 
 	      \begin{enumerate}
-		      \item Team Building\par
+	      
+		      \item \textbf{Step 1. Post Project}\par
 
-		            \begin{enumerate}
-			            \item The project is a team-based project (i.e. group project). We have 3 $ \sim $  5 students in each team. A team should have at least 3 students. \par
+                As mentioned earlier, the SoliGity account is associated with the user’s Github account. Once configured, the user can access the list of their own repositories (Figure Xa). To have one of their repositories being discovered by everyone on the platform, the project owner must link/add this repo to the project catalog (Figure Xb). For every project in the catalog, any user can create issues (Figure Xc). All issues created within SoliGity will be book-kept in the SoliGity blockchain DApp, and they will be propagated to Github as regular Github issues using Github APIs. While creating an issue, SoliGity also prompts the user for a price - the amount of cryptocurrency that the project owner will award to the developer when the work is approved. \par
+                
+		      \item \textbf{Step 2. Discover Project}\par
+		      Once the projects are posted on the catalog, everyone can discover them. We envision an interface that looks like an AppStore, displaying project information in rich details such as project name, pictures, languages & frameworks etc. The intuitive, friendly experience will be of great benefit for these entry-level developers and students to quickly become interested in a project. The project description page (Figure Xc.) displays the issues (note: issues are not limited to bugs - they can also be new features and feasibility studies) that’s available for anyone to pick up and make contributions. 
 
-			            \item Please print the team form given you in the appendix of this document out and the members of each team need to fill the form and give their signatures properly. The team should submit the form in the midterm week.\par
-
-			            \item Certainly, every student can join at most one group. \par
-
-
-		            \end{enumerate}
-		      \item Contents\par
-
-		            \begin{enumerate}
-			            \item Think about a simple application to develop with the blockchain technology.\  \par
-
-			            \item Setup the development environment \par
-
-			                  The team needs to setup the \textbf{\uline{Truffle + React + Web3js}} development environments. \par
-
-			            \item Each group should create a project on GitHub and put your project on the GitHub. In the end of the term, please send me the link of your project repository on GitHub. \par
-
-			            \item Your project should be runnable and functional.\par
-
-			            \item In your Assignment 2 (which is group based), please submit the follows:\par
-
-			                  \begin{enumerate}
-				                  \item \textbf{\uline{The whitepaper}} of your project (i.e., a document describes the application). \par
-
-				                  \item The \textbf{\uline{wireframe}}.\par
-
-				                  \item The \textbf{\uline{smart contract code}}.\par
-
-				                  \item The \textbf{\uline{test code for your smart contract}}.\par
-
-
-			                  \end{enumerate}
-			            \item Project demo and final report submission are needed in the end.\par
-
-
-		            \end{enumerate}
+		           
+		     \item \textbf{Step 3. Making Contribution}\par
+		     
+		     \item \textbf{Step 4. Rewarding Contribution}\par
+		     
+		     
+		            
 	      \end{enumerate}
-	\item Evaluation\par
+	      
+	\item \textbf{Step-by-step Screenshot with Explanation}\par
 
 	      \begin{enumerate}
 		      \item Presentation\par
 
 		            In the \textbf{\uline{very last week}}, we have a presentation course. The presentation takes 70$\%$  of your project evaluation. \par
 
-		      \item Report\par
 
-		            The report should be at least 20 pages of main contents in Letter paper, Font Size = 12, 1.5 times line spacing, with Normal margin in \textbf{\uline{MS Word}} (2.54 cm for all sides). Pictures (like screenshots) are encouraged in the report, but the number of pictures cannot exceed 15 and the size of picture should meet the following requirements (Height < 8cm and Width < 14cm).\par
+		            \vspace{\baselineskip}
 
-		            \textbf{\uline{Violation with any of the above rules may result in the deduction of your project marks}}.\par
+	      \end{enumerate}
 
-		      \item Fairness\par
+	\item \textbf{Reflection}\par
 
-		            Each team should fill in a Peer-to-Peer evaluation form for fairness purposes.\par
+	      \begin{enumerate}
+		      \item Presentation\par
 
-		            Each team member will receive the inner-team evaluation for his/her contributions of the course project in a percentage. That is, the sum of all members’ percentage marks \textbf{\uline{should NOT exceed 100}}$\%$ , and ALL team member should sign clearly to show that they have reached an agreement.\par
-
-		            If the sum of percentages over all team members exceeds 100$\%$  OR any student’s signature is missing, the form is INVALID. The form should be submitted together with the course project report on the project presentation day.\par
+		            In the \textbf{\uline{very last week}}, we have a presentation course. The presentation takes 70$\%$  of your project evaluation. \par
 
 
 		            \vspace{\baselineskip}
 
 	      \end{enumerate}
+
+	\item Future Works\par
+
+	      \begin{enumerate}
+		      \item Presentation\par
+
+		            In the \textbf{\uline{very last week}}, we have a presentation course. The presentation takes 70$\%$  of your project evaluation. \par
+
+
+		            \vspace{\baselineskip}
+
+	      \end{enumerate}
+	      
+	\item \textbf{Value Proposition}\par
+
+	      \begin{enumerate}
+		      \item Presentation\par
+
+		            In the \textbf{\uline{very last week}}, we have a presentation course. The presentation takes 70$\%$  of your project evaluation. \par
+
+
+		            \vspace{\baselineskip}
+
+	      \end{enumerate}
+	      
 	\item Appendix (Two forms in next two pages):
 
 
@@ -270,4 +290,16 @@
 % \vspace{\baselineskip}
 
 % \printbibliography
+
+a very useful reference for latex ~\cite{cointelegraph_2018}
+a very useful reference for latex ~\cite{blockchain_pulse_ibm_blockchain_blog_2020}
+a very useful reference for latex ~\cite{coin_center}
+a very useful reference for latex ~\cite{hurley_feed}
+
+
+
+\bibliography{mybib.bib}{}
+\bibliographystyle{plain}
+
+
 \end{document}
