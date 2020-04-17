@@ -12,6 +12,7 @@
 \renewcommand{\arraystretch}{1.3}
 
 \usepackage{array}
+\usepackage{float}
 \newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
 \newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}}
 \newcolumntype{R}[1]{>{\PreserveBackslash\raggedleft}p{#1}}
@@ -115,7 +116,7 @@ SoliGity aims to provide a friendly, intuitive experience end-to-end in between 
 
 \noindent After signing up, the workflow can be summarised in four steps (Figure~\ref{fig:workflow1}):
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=16.5cm]{graphs/00a. workflow.jpeg}
 	\caption{SoliGity 4-Step Workflow}
@@ -128,7 +129,7 @@ SoliGity aims to provide a friendly, intuitive experience end-to-end in between 
 As mentioned earlier, the SoliGity account is associated with the user’s GitHub account. Once configured, the user can access the list of their own repositories (Figure~\ref{fig:workflow2}a). To have one of their repositories being discovered by everyone on the platform, the project owner must link/add this repo to the project catalog (Figure~\ref{fig:workflow2}b). For every project in the catalog, any user can create issues (Figure~\ref{fig:workflow2}c). All issues created within SoliGity will be book-kept in the SoliGity blockchain DApp, and they will be propagated to GitHub as regular GitHub issues using GitHub APIs. While creating an issue, SoliGity also prompts the user for a price - the amount of cryptocurrency that the project owner will award to the developer when the work is approved. Each issue also comes with a status tracked by the DApp - \textit{Accepting Contributions}, \textit{Pending Approval}, and \textit{Done}. In this stage, a newly-opened issue is in \textit{Accepting Contribution} status.
 
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=16.5cm]{graphs/00b. workflow.jpeg}
 	\caption{SoliGity 4-Step Workflow}
@@ -158,29 +159,42 @@ In this section, we demonstrate SoliGity step-by-step.
 \subsection*{Step 0. Initial Setup}
  \begin{enumerate}
    \item DApp Setup
-   
+       \begin{figure}[H]
+    	\centering
+        \includegraphics[height=7.5cm]{graphs/46. setup_1.png}\\
+    	\caption{SoliGity Setup}
+    	\label{fig:setup1}
+        \end{figure}
+    
+        \begin{figure}[H]
+        	\centering
+            \includegraphics[height=7.5cm]{graphs/47. setup_2.png}\\
+        	\caption{SoliGity Setup Cont'd}
+        	\label{fig:setup2}
+        \end{figure}
+
+        \begin{figure}[H]
+        	\centering
+            \includegraphics[width=16.5cm]{graphs/48. setup_3.png}\\
+        	\caption{SoliGity Setup Cont'd}
+        	\label{fig:setup3}
+        \end{figure}
+
    \item SolGity Account Setup
+        \begin{figure}[H]
+        	\centering
+            \includegraphics[width=16.5cm]{graphs/49. setup_4.png}\\
+        	\caption{SoliGity Setup Cont'd}
+        	\label{fig:setup4}
+        \end{figure}
  \end{enumerate}
-
-
-\begin{figure}[h]
-	\centering
-    \includegraphics[height=7.5cm]{graphs/46. setup_1.png}\\
-	\caption{SoliGity Setup}
-	\label{fig:setup1}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-    \includegraphics[height=7.5cm]{graphs/47. setup_2.png}\\
-	\caption{SoliGity Setup Cont'd}
-	\label{fig:setup1}
-\end{figure}
-
 
 
 
 \subsection*{Step 1. Post Project}
+
+
+
 \subsection*{Step 2. Discover Project}
 \subsection*{Step 3. Making Contribution}
 \subsection*{Step 4. Rewarding Contribution}
