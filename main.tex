@@ -125,7 +125,7 @@ SoliGity aims to provide a friendly, intuitive experience end-to-end in between 
 
 \subsection*{Step 1. Post Project}
 
-As mentioned earlier, the SoliGity account is associated with the user’s Github account. Once configured, the user can access the list of their own repositories (Figure~\ref{fig:workflow2}a). To have one of their repositories being discovered by everyone on the platform, the project owner must link/add this repo to the project catalog (Figure~\ref{fig:workflow2}b). For every project in the catalog, any user can create issues (Figure~\ref{fig:workflow2}c). All issues created within SoliGity will be book-kept in the SoliGity blockchain DApp, and they will be propagated to Github as regular Github issues using Github APIs. While creating an issue, SoliGity also prompts the user for a price - the amount of cryptocurrency that the project owner will award to the developer when the work is approved. Each issue also comes with a status tracked by the DApp - \textit{Accepting Contributions}, \textit{Pending Approval}, and \textit{Done}. In this stage, a newly-opened issue is in \textit{Accepting Contribution} status.
+As mentioned earlier, the SoliGity account is associated with the user’s Github account. Once configured, the user can access the list of their own repositories (Figure~\ref{fig:workflow2}a). To have one of their repositories being discovered by everyone on the platform, the project owner must link/add this repo to the project catalog (Figure~\ref{fig:workflow2}b). For every project in the catalog, any user can create issues (Figure~\ref{fig:workflow2}c). All issues created within SoliGity will be book-kept in the SoliGity blockchain DApp, and they will be propagated to Github as regular Github issues using Github APIs. While creating an issue, SoliGity also prompts the user for a price - the amount of cryptocurrency that the project owner will award to the developer when the work is approved. Each issue also comes with a status tracked by the DApp - \textit{Accepting Contributions}, \textit{Pending Approval}, and \textit{Done}. In this stage, a newly-opened issue is in \textit{Accepting Contribution} status. 
 
 
 \begin{figure}[h]
@@ -146,7 +146,7 @@ Once the developer finds an issue to work on, he/she must fork the repository to
 \subsection*{Step 4. Rewarding Contribution}
 When a review request is made, the project owner reviews the code changes on GitHub website as he/she normally does in the traditional Git workflow. If the work is acceptable, the owner will approve the code change on SoliGity by pressing the Approve button (Figure~\ref{fig:workflow2}c). Doing so will (i) Merge the changes to the owner’s Git repository, 
 (ii) Transfer the bounty in ETH to developer’s wallet, 
-(iii) Change the issue status from \textit{Pending Approval} to \textit{Done}.
+(iii) Change the issue status from \textit{Pending Approval} to \textit{Done}. In case the owner is not satisfied with the code changes, he/she can reject the contribution by pressing the Reject button (Figure ~\ref{fig:workflow2}c). This will set the issue status back to \textit{Accepting Contribution} and the process will be be re-started from Step 3. 
 
 
 \section{Step-by-step Screenshot with Explanation}
