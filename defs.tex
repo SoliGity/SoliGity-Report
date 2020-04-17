@@ -29,10 +29,12 @@
 % \usepackage{pst-all}
 % \usepackage{pstricks-add}
 % \usepackage{pst-plot}
+\usepackage[title]{appendix}
 \usepackage{graphicx}
 % \usepackage{subfig}
 % \usepackage{enumerate}
-\usepackage[pdfpagelabels,pdfpagemode=None]{hyperref}
+\PassOptionsToPackage{hyphens}{url}\usepackage[pdfpagelabels,pdfpagemode=None]{hyperref}
+
 % \usepackage{algorithmic}
 \usepackage{mathtools}
 \usepackage{algorithm}
@@ -81,7 +83,7 @@
   \mbox{}\\\mbox{}\quad
   \begin{minipage}{1.0\linewidth}
     \begin{case}[#1]
-    }{
+      }{
     \end{case}
   \end{minipage}
 }
@@ -89,8 +91,8 @@
 % The following helps fix having too much vertical space when writing
 % predicates or functions applied to derivation trees
 \newcommand{\sarray}[1]{
-{\begin{array}[c]{@{}l@{}} #1
-  \end{array}}}
+  {\begin{array}[c]{@{}l@{}} #1
+      \end{array}}}
 
 \newcommand{\fdeduce}[2]{\ensuremath{#2 :: #1}}
 
@@ -142,8 +144,8 @@
 %% inferbox: an environment for typesetting a group of inference rules
 %%
 \newenvironment{inferbox}[1][\textwidth]
-  {\begin{minipage}{#1}\begin{mathpar}}
-  {\end{mathpar}\end{minipage}}
+{\begin{minipage}{#1}\begin{mathpar}}
+      {\end{mathpar}\end{minipage}}
 
 
 %% buinfer: build an inference tree bottom up, rather than top-down.  Sometimes
@@ -164,14 +166,14 @@
 
 %% block - used to indent code or create newlines of math stuff.
 \newenvironment{block}[1][t]
-  {\begin{array}[#1]{@{}l@{}}}
-  {\end{array}}
+{\begin{array}[#1]{@{}l@{}}}
+    {\end{array}}
 
 % Block, or any array[t]/array[c]/array[b] does not play well with 
 % stretchy parens or brackets.  Use this instead.
 % It protects everything in another array
 \newenvironment{roundbrack}{\left(\begin{array}{@{}l@{}}}
-  {\end{array}\right)}
+    {\end{array}\right)}
 
 
 % mark something in gray outline
@@ -305,9 +307,9 @@
 \newcommand{\bsc}{\Downarrow_{\Com}}
 
 \newenvironment{whileblock}[2][t]
-  {\begin{block}[#1]\<while> \mbsf{#2} \<do>\\
-      \quad\begin{block} \color{blue}}
-    {\end{block}\end{block}}
+{\begin{block}[#1]\<while> \mbsf{#2} \<do>\\
+    \quad\begin{block} \color{blue}}
+      {\end{block}\end{block}}
 
 
 % Doesn't work because of the end-environment part (grr...)
@@ -333,18 +335,18 @@
 \newcommand{\z}{\mbsf{z}}
 
 \newenvironment{letblock}[2][t]
-  {\begin{block}[#1]\<let> \mbsf{#2} \\
-      \<nin>\begin{block} \color{blue}}
-    {\end{block}\end{block}}
+{\begin{block}[#1]\<let> \mbsf{#2} \\
+    \<nin>\begin{block} \color{blue}}
+      {\end{block}\end{block}}
 
 
 % Recursion
 \oblang{fix[fix\;],rec[rec\;]}
 
 \newenvironment{fixblock}[2][t]
-  {\begin{block}[#1]\<fix> \mbsf{#2}. \\
-      \quad\begin{block} \color{blue}}
-    {\end{block}\end{block}}
+{\begin{block}[#1]\<fix> \mbsf{#2}. \\
+    \quad\begin{block} \color{blue}}
+      {\end{block}\end{block}}
 
 
 % Unit
@@ -362,9 +364,9 @@
 \oblang{letcc[let/cc\;],throw[throw\;]}
 
 \newenvironment{letccblock}[2][t]
-  {\begin{block}[#1]\<letcc> \mbsf{#2} \\
-      \<nin>\begin{block} \color{blue}}
-    {\end{block}\end{block}}
+{\begin{block}[#1]\<letcc> \mbsf{#2} \\
+    \<nin>\begin{block} \color{blue}}
+      {\end{block}\end{block}}
 
 
 % Pairs
