@@ -237,27 +237,29 @@ yarn start
 \end{figure}
 
 \begin{figure}[H]
+\captionsetup{justification   = raggedright,
+              singlelinecheck = false}
 	\centering
-	\begin{subfigure}[b]{.45\textwidth}
+	\begin{subfigure}[]{.45\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{graphs/01. git_clone}
-		\caption{\texttt{git clone}}
+				\caption*{\textbf{Setup Output - Truffle Compile}}
+		\includegraphics[width=\textwidth]{graphs/05. truffle_compile.jpg}
 	\end{subfigure}
-	\begin{subfigure}[b]{.45\textwidth}
+	\begin{subfigure}[]{.45\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{graphs/04. yarn_install_frontend}
-		\caption{Frontend - \texttt{yarn install}}
+				\caption*{Ganache Setup}
+		\includegraphics[width=\textwidth]{graphs/06. ganache_setup.jpg}
 	\end{subfigure}
 	\hspace{1em}
 	\begin{subfigure}[b]{.45\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{graphs/02. yarn_install_backend}
+		\includegraphics[width=\textwidth]{graphs/07. truffle_migrate.jpg}
 		\caption{Backend - \texttt{yarn install}}
 
 	\end{subfigure}
 	\begin{subfigure}[b]{.45\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{graphs/03. user_db_migrate}
+		\includegraphics[width=\textwidth]{graphs/08. ganache_deployed_contract.jpg}
 		\caption{Backend - user database migrate}
 	\end{subfigure}
 	\caption{Backend and Frontend Environment Configuration}
