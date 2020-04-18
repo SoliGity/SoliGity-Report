@@ -175,42 +175,8 @@ In this section, we demonstrate SoliGity step-by-step.
 \subsection*{Step 0. \(\;\;\)Initial Setup}
 
 \subsubsection{Setup Environment}
-% first column
-\begin{figure}[ht]
-	\begin{minipage}[t]{0.45\linewidth}
 
-		11
-		% 		\begin{lstlisting}[language=bash]
-		% # Clone the repository
-		% git clone git@github.com:SoliGity/SoliGity.git
-		% # Go inside the directory
-		% cd SoliGity
-		% # Install dependencies for backend
-		% yarn install
-		% # Setup database (run all the migrations)
-		% npx sequelize-cli db:migrate
-		% # Go inside the directory for frontend
-		% cd frontend
-		% # Install dependencies for frontend
-		% yarn install
-		% # Setup SoliGity contract
-		% truffle compile
-		% truffle migrate
-		% # Back to root directory
-		% cd ..
-		% # Start backend server and frontend
-		% yarn start
-		% 		\end{lstlisting}
-	\end{minipage}
-
-	%second column
-	\begin{minipage}[t]{0.45\linewidth}
-		This is the second column.
-	\end{minipage}
-
-\end{figure}
-
-\begin{figure}[ht]
+\begin{figure}[H]
 	\begin{minipage}[c]{0.4\linewidth}
 		\begin{lstlisting}[language=bash]
 # Clone the repository
@@ -249,13 +215,7 @@ yarn start
 			\includegraphics[width=\textwidth]{graphs/01. git_clone}
 			\caption{\texttt{git clone}}
 		\end{subfigure}
-		\begin{subfigure}[b]{\textwidth}
-			\centering
-			\includegraphics[width=\textwidth]{graphs/04. yarn_install_frontend}
-			\caption{Frontend - \texttt{yarn install}}
-		\end{subfigure}
-		\hspace{1em}
-		\begin{subfigure}[b]{\textwidth}
+			\begin{subfigure}[b]{\textwidth}
 			\centering
 			\includegraphics[width=\textwidth]{graphs/02. yarn_install_backend}
 			\caption{Backend - \texttt{yarn install}}
@@ -266,37 +226,42 @@ yarn start
 			\includegraphics[width=\textwidth]{graphs/03. user_db_migrate}
 			\caption{Backend - user database migrate}
 		\end{subfigure}
+			\begin{subfigure}[b]{\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{graphs/04. yarn_install_frontend}
+			\caption{Frontend - \texttt{yarn install}}
+		\end{subfigure}
 		% \caption{Backend and Frontend Environment Configuration}
 		% \end{figure}
 	\end{minipage}
 \end{figure}
 
-% \begin{figure}[H]
-% 	\centering
-% 	\begin{subfigure}[b]{.45\textwidth}
-% 		\centering
-% 		\includegraphics[width=\textwidth]{graphs/01. git_clone}
-% 		\caption{\texttt{git clone}}
-% 	\end{subfigure}
-% 	\begin{subfigure}[b]{.45\textwidth}
-% 		\centering
-% 		\includegraphics[width=\textwidth]{graphs/04. yarn_install_frontend}
-% 		\caption{Frontend - \texttt{yarn install}}
-% 	\end{subfigure}
-% 	\hspace{1em}
-% 	\begin{subfigure}[b]{.45\textwidth}
-% 		\centering
-% 		\includegraphics[width=\textwidth]{graphs/02. yarn_install_backend}
-% 		\caption{Backend - \texttt{yarn install}}
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{.45\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{graphs/01. git_clone}
+		\caption{\texttt{git clone}}
+	\end{subfigure}
+	\begin{subfigure}[b]{.45\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{graphs/04. yarn_install_frontend}
+		\caption{Frontend - \texttt{yarn install}}
+	\end{subfigure}
+	\hspace{1em}
+	\begin{subfigure}[b]{.45\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{graphs/02. yarn_install_backend}
+		\caption{Backend - \texttt{yarn install}}
 
-% 	\end{subfigure}
-% 	\begin{subfigure}[b]{.45\textwidth}
-% 		\centering
-% 		\includegraphics[width=\textwidth]{graphs/03. user_db_migrate}
-% 		\caption{Backend - user database migrate}
-% 	\end{subfigure}
-% 	\caption{Backend and Frontend Environment Configuration}
-% \end{figure}
+	\end{subfigure}
+	\begin{subfigure}[b]{.45\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{graphs/03. user_db_migrate}
+		\caption{Backend - user database migrate}
+	\end{subfigure}
+	\caption{Backend and Frontend Environment Configuration}
+\end{figure}
 
 \begin{figure}[H]
 	\centering
