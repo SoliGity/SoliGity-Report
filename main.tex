@@ -144,7 +144,7 @@ As mentioned earlier, the SoliGity account is associated with the user’s GitHu
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=16.5cm]{graphs/00b. workflow.jpeg}
+	\includegraphics[width=16.5cm]{graphs/00b. workflow.png}
 	\caption{SoliGity 4-Step Workflow}
 	\label{fig:workflow2}
 \end{figure}
@@ -166,7 +166,7 @@ When a review request is made, the project owner reviews the code changes on Git
 \noindent Since the GitHub commands including Issue Creation, Fork, and Making Pull Request are fully integrated into SoliGity, the entire workflow is intuitive and straightforward. The transaction takes place between the project owner and the developer nearly instantly, securely without third parties. All of these functional and non-functional features make SoliGity redefine the open-source project rewarding mechanism. In the next section we demonstrate our working prototype step-by-step.
 
 \section{Step-by-step Screenshot with Explanation}
-In this section, we demonstrate SoliGity step-by-step.
+% In this section, we demonstrate SoliGity step-by-step.
 
 
 \renewcommand\thesubsection{Step \arabic{subsection}.}
@@ -177,7 +177,7 @@ In this section, we demonstrate SoliGity step-by-step.
 \subsubsection{Setup Environment}
 
 \begin{figure}[H]
-	\begin{minipage}[c]{0.4\linewidth}
+	\begin{minipage}[t]{0.4\linewidth}
 		\begin{lstlisting}[language=bash]
 # Clone the repository
 git clone git@github.com:SoliGity/SoliGity.git
@@ -190,7 +190,42 @@ yarn install
 
 # Setup database (run all the migrations)
 npx sequelize-cli db:migrate
+				\end{lstlisting}
+	\end{minipage}\hfill
+	\begin{minipage}[t]{0.5\linewidth}
+		% \begin{figure}[H]
+		\centering
+		\begin{subfigure}[b]{\textwidth}
+			\captionsetup{justification   = raggedright,
+              singlelinecheck = false}
+			\centering
+						\caption*{\textbf{Setup Output - }\texttt{git clone}}
+			\includegraphics[width=\textwidth]{graphs/01. git_clone}
+		\end{subfigure}
+			\begin{subfigure}[b]{\textwidth}
+				\captionsetup{justification   = raggedright,
+              singlelinecheck = false}
+			\centering
+						\caption*{Backend - \texttt{yarn install}}
 
+			\includegraphics[width=\textwidth]{graphs/02. yarn_install_backend}
+
+		\end{subfigure}
+		\begin{subfigure}[b]{\textwidth}
+			\captionsetup{justification   = raggedright,
+              singlelinecheck = false}
+			\centering
+						\caption*{Backend - user database migrate}
+
+			\includegraphics[width=\textwidth]{graphs/03. user_db_migrate}
+		\end{subfigure}
+
+	\end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{minipage}[t]{0.4\linewidth}
+		\begin{lstlisting}[language=bash]
 # Go inside the directory for frontend
 cd frontend
 
@@ -207,70 +242,90 @@ cd ..
 yarn start
 				\end{lstlisting}
 	\end{minipage}\hfill
-	\begin{minipage}[c]{0.5\linewidth}
+	\begin{minipage}[t]{0.5\linewidth}
 		% \begin{figure}[H]
+					\begin{subfigure}[b]{\textwidth}
+				\captionsetup{justification   = raggedright,
+              singlelinecheck = false}
+			\centering
+						\caption*{Frontend - \texttt{yarn install}}
+
+			\includegraphics[width=\textwidth]{graphs/04. yarn_install_frontend}
+		\end{subfigure}
 		\centering
 		\begin{subfigure}[b]{\textwidth}
-			\centering
-			\includegraphics[width=\textwidth]{graphs/01. git_clone}
-			\caption{\texttt{git clone}}
+			\captionsetup{justification   = raggedright,
+              singlelinecheck = false}
+		\centering
+				\caption*{\textbf{Setup Output} - \texttt{truffle Compile}}
+		\includegraphics[width=\textwidth]{graphs/05. truffle_compile.jpg}
 		\end{subfigure}
 			\begin{subfigure}[b]{\textwidth}
-			\centering
-			\includegraphics[width=\textwidth]{graphs/02. yarn_install_backend}
-			\caption{Backend - \texttt{yarn install}}
+	\captionsetup{justification   = raggedright,
+              singlelinecheck = false}
+		\centering
+				\caption*{\textbf{Ganache Setup}}
+		\includegraphics[width=\textwidth]{graphs/06. ganache_setup.jpg}
+		\end{subfigure}
 
-		\end{subfigure}
-		\begin{subfigure}[b]{\textwidth}
-			\centering
-			\includegraphics[width=\textwidth]{graphs/03. user_db_migrate}
-			\caption{Backend - user database migrate}
-		\end{subfigure}
-			\begin{subfigure}[b]{\textwidth}
-			\centering
-			\includegraphics[width=\textwidth]{graphs/04. yarn_install_frontend}
-			\caption{Frontend - \texttt{yarn install}}
-		\end{subfigure}
-		% \caption{Backend and Frontend Environment Configuration}
-		% \end{figure}
+	\begin{subfigure}[t]{\textwidth}
+	\captionsetup{justification   = raggedright,
+              singlelinecheck = false}
+		\centering
+				\caption*{\textbf{Setup Output} - \texttt{truffle migrate}}
+		\includegraphics[width=\textwidth]{graphs/07. truffle_migrate.jpg}
+	\end{subfigure}
+	\begin{subfigure}[t]{\textwidth}
+	\captionsetup{justification   = raggedright,
+              singlelinecheck = false}
+		\centering
+				\caption*{\textbf{Deployed Contract}}
+		\includegraphics[width=\textwidth]{graphs/08. ganache_deployed_contract.jpg}
+	\end{subfigure}
+
 	\end{minipage}
 \end{figure}
 
-\begin{figure}[H]
-\captionsetup{justification   = raggedright,
-              singlelinecheck = false}
-	\centering
-	\begin{subfigure}[]{.45\textwidth}
-		\centering
-				\caption*{\textbf{Setup Output - Truffle Compile}}
-		\includegraphics[width=\textwidth]{graphs/05. truffle_compile.jpg}
-	\end{subfigure}
-	\begin{subfigure}[]{.45\textwidth}
-		\centering
-				\caption*{Ganache Setup}
-		\includegraphics[width=\textwidth]{graphs/06. ganache_setup.jpg}
-	\end{subfigure}
-	\hspace{1em}
-	\begin{subfigure}[b]{.45\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{graphs/07. truffle_migrate.jpg}
-		\caption{Backend - \texttt{yarn install}}
+% \begin{figure}[H]
 
-	\end{subfigure}
-	\begin{subfigure}[b]{.45\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{graphs/08. ganache_deployed_contract.jpg}
-		\caption{Backend - user database migrate}
-	\end{subfigure}
-	\caption{Backend and Frontend Environment Configuration}
-\end{figure}
+% 	\centering
+% 	\begin{subfigure}[t]{.45\textwidth}
+% 	\captionsetup{justification   = raggedright,
+%               singlelinecheck = false}
+% 		\centering
+% 				\caption*{\textbf{Setup Output} - \texttt{truffle Compile}}
+% 		\includegraphics[width=\textwidth]{graphs/05. truffle_compile.jpg}
+% 	\end{subfigure}
+% 	\begin{subfigure}[t]{.45\textwidth}
+% 	\captionsetup{justification   = raggedright,
+%               singlelinecheck = false}
+% 		\centering
+% 				\caption*{\textbf{Ganache Setup}}
+% 		\includegraphics[width=\textwidth]{graphs/06. ganache_setup.jpg}
+% 	\end{subfigure}
+% 	\begin{subfigure}[t]{.45\textwidth}
+% 	\captionsetup{justification   = raggedright,
+%               singlelinecheck = false}
+% 		\centering
+% 				\caption*{\textbf{Setup Output} - \texttt{truffle migrate}}
+% 		\includegraphics[width=\textwidth]{graphs/07. truffle_migrate.jpg}
+% 	\end{subfigure}
+% 	\begin{subfigure}[t]{.45\textwidth}
+% 	\captionsetup{justification   = raggedright,
+%               singlelinecheck = false}
+% 		\centering
+% 				\caption*{\textbf{Deployed Contract}}
+% 		\includegraphics[width=\textwidth]{graphs/08. ganache_deployed_contract.jpg}
+% 	\end{subfigure}
+% 	\caption{Backend and Frontend Environment Configuration}
+% \end{figure}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=16.5cm]{graphs/47. setup_2.png}\\
-	\caption{Frontend - \texttt{truffle compile} and \texttt{truffle migration}}
-	\label{fig:setup4}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\includegraphics[width=16.5cm]{graphs/47. setup_2.png}\\
+% 	\caption{Frontend - \texttt{truffle compile} and \texttt{truffle migration}}
+% 	\label{fig:setup4}
+% \end{figure}
 
 
 \subsubsection{Setup Accounts}
