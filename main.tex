@@ -120,6 +120,7 @@ to achieve an efficient transaction workflow between the project owner and the d
 
 
 \section{Use Case Workflow}
+\label{section:usecaseworkflow}
 
 SoliGity aims to provide a friendly, intuitive experience end-to-end in between the open-source project owner and the developers. It integrates with the Git seamlessly in the way that extra steps are minimized. Since it is a web-based platform with GitHub integration, both project owners and developers need to sign up for an account and associate it with their GitHub account prior to taking advantage of our services. Note that the account is general-purpose. A user can act as both the project owner and the developer using the same account - he/she can own a project and seek others’ help while helping with other people’s projects as developers. Our project also assumes that the user’s computer is properly configured with an Ethereum account as well as Meta Mask - A crypto wallet \& gateway that provides the user with a wallet to store and transact his/her Ethereum and Ethereum-based tokens through a web browser. \\
 
@@ -158,15 +159,32 @@ Once the projects are posted on the catalog, everyone can discover them. We envi
 Once the developer finds an issue to work on, he/she must fork the repository to their own GitHub account. We provide a button shortcut to help the developer fork the repo without leaving SoliGity. Then, the development process is identical to regular Git workflow - the developer commits and pushes the work to their forked repo, then makes a pull request when the work is done (Figure~\ref{fig:workflow2}c). Note that the review request is made in SoliGity - this makes sure that both our DApp and GitHub are aware of this activity. On SoliGity, the issue status will be changed to \textit{Pending Approval} from \textit{Accepting Contribution}; on GitHub, a pull request will be made for the project owner to review the code changes.
 
 \subsection{Rewarding Contribution}
-When a review request is made, the project owner reviews the code changes on GitHub website as he/she normally does in the traditional Git workflow. If the work is acceptable, the owner will approve the code change on SoliGity by pressing the Approve button (Figure~\ref{fig:workflow2}c). Doing so will (i) Merge the changes to the owner’s Git repository,
-(ii) Transfer the bounty in ETH to developer’s wallet,
-(iii) Change the issue status from \textit{Pending Approval} to \textit{Done}. In case the owner is not satisfied with the code changes, he/she can reject the contribution by pressing the Reject button (Figure~\ref{fig:workflow2}c). This will set the issue status back to Accepting Contribution and the process can be re-started.  \\
+When a review request is made, the project owner reviews the code changes on GitHub website as he/she normally does in the traditional Git workflow. If the work is acceptable, the owner will approve the code change on SoliGity by pressing the Approve button (Figure~\ref{fig:workflow2}c). Doing so will (i) Merge the changes to the owner’s Git repository;
+(ii) Transfer the bounty in ETH to developer’s wallet;
+(iii) Change the issue status from \textit{Pending Approval} to \textit{Done}. In case the owner is not satisfied with the code changes, he/she can reject the contribution by pressing the Reject button (Figure~\ref{fig:workflow2}c). This will set the issue status back to Accepting Contribution and the process can be re-started. The state transition diagram below visualizes three states of an issue.\\
 
+   \begin{center}
+   \scriptsize
+      \begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=4cm,semithick]
+        \tikzstyle{every state}=[text=black]
 
-\noindent Since the GitHub commands including Issue Creation, Fork, and Making Pull Request are fully integrated into SoliGity, the entire workflow is intuitive and straightforward. The transaction takes place between the project owner and the developer nearly instantly, securely without third parties. All of these functional and non-functional features make SoliGity redefine the open-source project rewarding mechanism. In the next section we demonstrate our working prototype step-by-step.
+        \node[state, initial left, align=center] (a) {Accepting\\Contribution} ;
+        \node[state, right of=a, align=center,xshift=1cm] (p) {Pending\\Approval};
+        \node[state, right of=p, align=center] (d) {Done};
+        \draw[->]
+
+        (a) edge[bend right] node[sloped,below,align=center]{request review} (p)
+        (p) edge[] node[sloped,above,align=center]{approve pull request} (d)
+        (p) edge[bend right] node[sloped, above, align=center]{reject pull request} (a)
+        ;
+
+      \end{tikzpicture}
+    \end{center}
+
+\noindent Since the GitHub commands including Issue Creation, Fork, and Making Pull Request are fully integrated into SoliGity, the entire workflow is intuitive and straightforward. The transaction takes place between the project owner and the developer nearly instantly and securely without third parties. All of these functional and non-functional features make SoliGity redefine the open-source project rewarding mechanism. In the next section we demonstrate our working prototype step-by-step.
 
 \section{Step-by-step Screenshot with Explanation}
-% In this section, we demonstrate SoliGity step-by-step.
+In this section, we demonstrate SoliGity step-by-step.
 
 
 \renewcommand\thesubsection{Step \arabic{subsection}.}
@@ -329,6 +347,8 @@ yarn start
 	\end{subfigure}
 
 	\end{minipage}
+	\caption{Environment Setup}
+	\label{fig:setup0}
 \end{figure}
 
 % \begin{figure}[H]
@@ -391,9 +411,12 @@ yarn start
 % 	\caption{Frontend - \texttt{truffle compile} and \texttt{truffle migration}}
 % 	\label{fig:setup4}
 % \end{figure}
-
+The link to repository of our project is \texttt{https://github.com/soligity}. From there, you will find the step-by-step setup instructions. To test our prototype locally on a single machine, the commands in Figure~\ref{fig:setup0} are used. After cloning the repository, we need to install all the dependencies for the backend, followed by a database migration.  Then, we install the dependencies for frontend. Note that a Ganache workspace needs to be created and be kept running throughout the rest of the processes. Running \texttt{truffle compile} and \texttt{truffle migrate} will compile the smart contract and deploy it to the local Ethereum network. When all the installations and deployment are successful, we will be able to launch the web server from the SoliGity main directory by running \textit{yarn start}. The default port number used for the local host is \texttt{3000}. 
 
 \subsubsection{Setup Accounts}
+In the rest of the demo, we name the first party - Project Owner as Alice; and the second party - Contributor/Developer as Bob. To differentiate their identities easily, we use 2 separate browsers: Firefox and Chrome respectively. To accomplish the workflow, each party must have two accounts: Blockchain Account and SoliGity Website Account. 
+
+In our local demo, the Blockchain account is obtained from the testing network served by Ganache. By selecting any two accounts (except the account indexed 0) and importing their private keys into the MetaMask - a web browser extension for accessing Ethereum enabled distributed applications, both Alice and Bob have 100 Ethereums (ETH) of balance in their wallet and are able to perform transactions within SoliGity  (Figure~\ref{fig:setup5}. Throughout the process, Ganache should remain running in the background.
 
 \begin{figure}[H]
 	\centering
@@ -402,6 +425,7 @@ yarn start
 	\label{fig:setup5}
 \end{figure}
 
+The second account is required to access to the SoliGity website. After signing up an account and logging in, both Alice and Bob need to associate their GitHub accounts with their SoliGity accounts (Figure~\ref{fig:setup6}). This allows them to view all their GitHub projects (repositories) and choose whatever projects they would like everyone on SoliGity to make contributions to. The Github Integration is achieved using GitHub APIs. 
 
 \begin{figure}[H]
 	\centering
@@ -409,11 +433,10 @@ yarn start
 	\caption{SoliGity Account Setup}
 	\label{fig:setup6}
 \end{figure}
-% \end{enumerate}
 
 \subsection{Post Project}
-% \begin{enumerate}
 \subsubsection{Post Project to Catalog}
+Project Catalog is a page where any registered SoliGity user is able to discover the participating projects. Since the web application is started from fresh and no one has posted any projects to SoliGity, the Project Catalog is empty (Figure~\ref{fig:post1} Left). As a project owner, Alice would like someone else on SoliGity to help her add new features and fixing some bugs to 2 projects she owns. Therefore, she chooses two projects \texttt{covid19model} and \texttt{DeepPiCar} from her Repository list and presses the \textit{Post to Catalog Button}. Note that we also use the DApp to manage the posted project on Project Catalog, meaning that posting a project to SoliGity will be recorded on the blockchain using the smart contract. That's why Alice need to pay a small amount of Gas fee for computation (Figure~\ref{fig:post1} Middle). After the projects are posted, they are visible on the Project Catalog page (Figure~\ref{fig:post1} Right). Note that these posted projects are also visible to Bob.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=16.5cm]{graphs/50. post_1.png}\\
@@ -422,7 +445,7 @@ yarn start
 \end{figure}
 
 \subsubsection{Create Issues}
-
+In order to let others know precisely what changes need to be made for her project and how much she is willing to pay for the contribution, Alice needs to create issues in the Project Description page, which can be accessed by clicking the \texttt{View Project} button from the Project Catalog page (Figure~\ref{fig:post2} Left). As described in Section~\ref{section:usecaseworkflow}, issues created in SoliGity are associated with a status, in this case \texttt{Accepting Contribution}. (Figure~\ref{fig:post2} Middle). The issues created within SoliGity will also be propagated to GitHub (Figure~\ref{fig:post2} Right). Issues created outside SoliGity are not applicable to the rewarding mechanism.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=16.5cm]{graphs/51. post_2.png}\\
@@ -430,10 +453,8 @@ yarn start
 	\label{fig:post2}
 \end{figure}
 
-% \end{enumerate}
-
-
 \subsection{Discover Project}
+As a contributor, Bob browses through all the available projects posted on the Project Catalog and chooses the projects he would like to be part of. In this case, he decides to work on the \texttt{covid19model}, so the website takes him to the project description page, where he could find the issues with status \texttt{Accepting Contribution} created by Alice earlier (Figure~\ref{fig:discover1} Left and Middle). Once Bob decides to make contributions, he can fork the project into his own GitHub account by pressing the \textit{Fork} button (Figure~\ref{fig:discover1} Middle and Right). The \textit{Fork} button is a shortcut that invokes the GitHub API.
 
 \begin{figure}[H]
 	\centering
@@ -442,8 +463,9 @@ yarn start
 	\label{fig:discover1}
 \end{figure}
 
-
 \subsection{Making Contribution}
+Bob makes changes to the project in the Forked repository so it will not affect anything on Alice's original repo. In this demo, Bob is working on an issue entitled \textit{Add Date to the Project README}. Figure~\ref{fig:contribute1} Left shows the change that Bob has made. Once Bob finishes his work, he presses the \textit{Request Review} button from the Project Description page. Doing so triggers two events: i) the issue status on SoliGity is changed from \textit{Accepting Contribution} to \textit{Pending Approval}; ii) a Pull Request is made on GitHub for Alice to review the changes (Figure~\ref{fig:contribute1} Middle and Right).  This simple demonstrates how easy and intuitive the process is. While this demo shows that the changes are made right from GitHub website, in real-world scenarios, users will follow the original Git workflow they are familiar with, such as using GUI applications or command prompts.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=16.5cm]{graphs/53. contribute_1.png}\\
@@ -452,66 +474,72 @@ yarn start
 \end{figure}
 
 \subsection{Rewarding Contribution}
-
-
 \subsubsection{Reject Pull Request}
+If Alice is not satisfied with Bob's work and decided to look for someone else to work on it, she can reject the Pull Request. Doing so will turn the issue back to \textit{Accepting Contribution} state, and the Bounty amount 15 ETH will not be transferred to Bob. As the state transition is written to Blockchain, Alice needs to pay for the Gas fee (Figure~\ref{fig:reward1}). 
 
 \begin{figure}[H]
 	\centering
-	\begin{subfigure}[b]{.45\textwidth}
-		\centering
-		\includegraphics[height=4cm]{graphs/38. alice_reject_pull_request}
-		% \caption{Alice Reject Pull Request}
-	\end{subfigure}
-	\begin{subfigure}[b]{.45\textwidth}
-		\centering
-		\includegraphics[height=4cm]{graphs/39. issue_info_updated}
-		% \caption{Status}
-	\end{subfigure}
-	\caption{Alice Rejects Pull Request and the Status of Issue Back to \textit{Accepting Contribution}}
+	\includegraphics[height=7cm]{graphs/54. reward_1.png}\\
+	\caption{Project owner rejecting code change}
+	\label{fig:reward1}
 \end{figure}
-
 
 \subsubsection{Approve Pull Request}
+If Alice is satisfied with Bob's work, she can press the \textit{Approve Pull Request} button. As discussed in Section ~\ref{section:usecaseworkflow}, doing so triggers three events: i) Bob's work is merged to Alice's original repo and the issue is closed (Figure~\ref{fig:reward2}); ii) The bounty 15 ETH is transferred from Alice's account to Bob's Account, resulting in 84.98 ETH in Alice's wallet and 114.99 ETH in Bob;'s wallet; (iii) The issue status is changed from \textit{Pending Approval} to \textit{Done}. As the state transition is written to Blockchain, there is also Gas fee in the transaction (Figure~\ref{fig:reward2}). The GitHub APIs allow the user to perform the approval actions without switching back and forth between SoliGity and GitHub, dramatically reduced confusions and the probability of human errors.    
 
 \begin{figure}[H]
 	\centering
-	\begin{subfigure}[b]{.45\textwidth}
-		\centering
-		\includegraphics[height=4cm]{graphs/40. alice_approve_pull_request}
-		% \caption{Alice Reject Pull Request}
-	\end{subfigure}
-	% \begin{subfigure}[b]{.32\textwidth}
-	% 	\centering
-	% 	\includegraphics[height=5cm]{graphs/41. alice_metamask_confirm}
-	% 	% \caption{Status}
-	% \end{subfigure}
-	\begin{subfigure}[b]{.45\textwidth}
-		\centering
-		\includegraphics[height=4cm]{graphs/41. issue_status_done}
-		% \caption{Status}
-	\end{subfigure}
-	\caption{Alice Approves Pull Request and the Status of Issue Becomes to \textit{Done}}
+	\includegraphics[width=16cm]{graphs/55. reward_2.png}\\
+	\caption{Project owner approving code change}
+	\label{fig:reward2}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\begin{subfigure}[b]{.45\textwidth}
-		\centering
-		\includegraphics[height=4cm]{graphs/42. metamask_alice_balance}
-		% \caption{Alice Reject Pull Request}
-	\end{subfigure}
-	\begin{subfigure}[b]{.45\textwidth}
-		\centering
-		\includegraphics[height=4cm]{graphs/43. metamask_bob_balance}
-		% \caption{Status}
-	\end{subfigure}
-	\caption{Changes in Balance of Alice and Bob}
+	\includegraphics[width=16cm]{graphs/56. reward_3.png}\\
+	\caption{Pull Request and Issue closed}
+	\label{fig:reward3}
 \end{figure}
+
 
 % \begin{figure}[H]
 % 	\centering
-% 	\includegraphics[height=7cm]{graphs/42. alice_balance_updated}
+% 	\begin{subfigure}[b]{.45\textwidth}
+% 		\centering
+% 		\includegraphics[height=4cm]{graphs/40. alice_approve_pull_request}
+% 		% \caption{Alice Reject Pull Request}
+% 	\end{subfigure}
+% 	% \begin{subfigure}[b]{.32\textwidth}
+% 	% 	\centering
+% 	% 	\includegraphics[height=5cm]{graphs/41. alice_metamask_confirm}
+% 	% 	% \caption{Status}
+% 	% \end{subfigure}
+% 	\begin{subfigure}[b]{.45\textwidth}
+% 		\centering
+% 		\includegraphics[height=4cm]{graphs/41. issue_status_done}
+% 		% \caption{Status}
+% 	\end{subfigure}
+% 	\caption{Alice Approves Pull Request and the Status of Issue Becomes to \textit{Done}}
+% \end{figure}
+
+% \begin{figure}[H]
+% 	\centering
+% 	\begin{subfigure}[b]{.45\textwidth}
+% 		\centering
+% 		\includegraphics[height=4cm]{graphs/42. metamask_alice_balance}
+% 		% \caption{Alice Reject Pull Request}
+% 	\end{subfigure}
+% 	\begin{subfigure}[b]{.45\textwidth}
+% 		\centering
+% 		\includegraphics[height=4cm]{graphs/43. metamask_bob_balance}
+% 		% \caption{Status}
+% 	\end{subfigure}
+% 	\caption{Changes in Balance of Alice and Bob}
+% \end{figure}
+
+% \begin{figure}[H]
+% 	\centering
+% 	\includegraphics[height=7cm]{graphs/42. alice_balaSnce_updated}
 % 	\caption{Ganache Deployed Contracts}
 % \end{figure}
 
@@ -521,17 +549,17 @@ yarn start
 % 	\caption{Ganache Deployed Contracts}
 % \end{figure}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[height=5cm]{graphs/44. pull_request_closed}
-	\caption{Pull Request Merged in the GitHub}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\includegraphics[height=5cm]{graphs/44. pull_request_closed}
+% 	\caption{Pull Request Merged in the GitHub}
+% \end{figure}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[height=4cm]{graphs/45. issue_closed}
-	\caption{Issue Closed in the GitHub}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\includegraphics[height=4cm]{graphs/45. issue_closed}
+% 	\caption{Issue Closed in the GitHub}
+% \end{figure}
 
 
 \renewcommand\thesection{\arabic{section}}
@@ -543,16 +571,18 @@ yarn start
 \section{Future Work}
 First of all, we will enrich the content of our Project Catalog page by incorporating multimedia such as pictures, videos, etc. so that it will provide a higher fidelity project browsing experience similar to an App Store to attract people to work on open source projects.
 
-Our existing prototype only allows one developer to claim an issue - once an issue is claimed by one contributor, no one else is allowed to make commitments. In the future, we wish one issue can be worked on by multiple contributors. More sophisticated rewarding mechanisms can be incorporated to help the owner decide and send the bounty to those who deliver the highest quality work. This is like a call-for-tender process, and will create a health competition among developers and motivate them to deliver their best share of work.
+Our existing prototype only allows one developer to claim an issue - once an issue is claimed by one contributor, no one else is allowed to make commitments. We need to upgrade our smart contract to be able to support more than one request review. This is because in reality, a popular project may attract thousands of developers to do one task. More sophisticated rewarding mechanisms can be incorporated to help the owner decide and send the bounty to those who deliver the highest quality work. This is like a call-for-tender process, and will create a health competition among developers and motivate them to deliver their best share of work.
 
 Third, we wish to establish a connection between the project owner and company recruiters in addition to sending the incentive to contributors. This allows the developer to receive additional recognition that can potentially lead them to their dream jobs.  
 
-Finally, we need to investigate how the solution can be deployed to the main network and apply appropriate advertisement campaigns to have our idea reach more people. 
+Finally, our team will also need to study how to deploy the contract in the Ethereum’s main network and design tasks to find out potential risks (such as hackers that try to bypass system requests) in our contracts to avoid system failures.
 
 \section{Value Proposition and Strategic Planning}
+The objective of our work is simple: Create a secure, transparent, intuitive and trustworthy platform to establish a multi-win situation in the software-driven world. With seamless integration of blockchain technology and Git, SoliGity helps developers discover interesting projects to work on and get rewarded and recognized; helps project owners to utilize global talents to accelerate software development; helps companies identify talents through direct referral (future work). We also strive for excellent user experience by executing deployment tests and continuously collecting feedback to improve. 
 
+We wish our solution to reach and benefit as many people as possible, therefore the service should be robust and cost-friendly. With that being said, this project is going to be open-sourced and free to use. It will hopefully operate using the donation from the general public. To make this happen, we are actively attending business pitch events such as UBC-RBC Get-seeded events and Hackathons related to Blockchain and Human Resources to expose our project to a broader audience. Apart from obtaining financial aids by winning awards to build up our web infrastructure, this will allow us to establish healthy, long-lasting connections with people in Education, Finance, Business, Engineering, and Sciences and potentially create collaboration opportunities.
 
-\section{Conclusion}
+As we envision a large group of our users are entry-level developers and university students, our first step is to work with university hackathon organizers and student teams to let us connect with their members in person to promote the product. We will also host campus events such as info-session and open houses to provide demos and answer questions. We will design posters with an easily-accessible QR code to make it easy for students to sign up. We also plan to reach out to university Co-op programs and career advising services to convince them to promote our product to students. We believe that a small-scale but high-quality adoption will eventually create a ripple effect to impact broader and more diverse communities. 
 
 \newpage
 
