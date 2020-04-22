@@ -29,11 +29,11 @@
 
 \title{SoliGity}
 \author{  
-  Sichen Luo\\
-  45323136
-  \and
   Zhenpeng Wu\\
   28125152 
+  \and
+  Sichen Luo\\
+  45323136
   \and
   Zitian Tong\\
   41439143
@@ -57,8 +57,7 @@ Apart from the complexity of an open-source project that rewarding mechanisms ma
 particular group, students, also deserve incentives for their contributions. Research has found that open-source
 projects play an important role in university students’ success~\cite{open_source_guides}. We surveyed 50
 students majoring in EECS (Electrical Engineering and Computer Science), over 75\% of them consider finding
-an internship job as one of their highest priorities. Standing out from a large pool of applicants, however,
-requires students to work on side projects. Furthermore, over 50\% of the students find it difficult to discover
+an internship job as one of their highest priorities. However, to stand out from a large pool of applicants, students are encouraged to spend extra time working on side projects. Furthermore, over 50\% of the students find it difficult to discover
 and identify the projects that interest them; even for those who do find an interesting project, 62\% of them
 found it hard to stay motivated~\cite{thomas_toch_2014}. More importantly, the contributors of open-source
 projects suggest they deserve more recognition for their work~\cite{freecodecamp.org_2018}.
@@ -137,7 +136,7 @@ Ethereum and Ethereum-based tokens through a web browser. \\
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=13.5cm]{graphs/00a. workflow.jpeg}
-	\caption{SoliGity 4-Step Workflow}
+	\caption{SoliGity 4-Step Workflow on Wireframes}
 	\label{fig:workflow1}
 \end{figure}
 
@@ -193,7 +192,7 @@ to the owner’s Git repository;
 (ii) Transfer the bounty in ETH to developer’s wallet;
 (iii) Change the issue status from \textit{Pending Approval} to \textit{Done}. In case the owner is not satisfied
 with the code changes, he/she can reject the contribution by pressing the Reject button (Figure~\ref{fig:workflow2}c).
-This will set the issue status back to Accepting Contribution and the process can be re-started. The state
+This will set the issue status back to \textit{Accepting Contribution} and the process can be re-started. The state
 transition diagram below visualizes three states of an issue.
 
 \begin{figure}[H]
@@ -370,7 +369,7 @@ In order to let others know precisely what changes need to be made for her proje
 is willing to pay for the contribution, Alice needs to create issues in the Project Description page,
 which can be accessed by clicking the \texttt{View Project} button from the Project Catalog page
 (Figure~\ref{fig:post2} Left). As described in Section~\ref{section:usecaseworkflow}, issues created
-in SoliGity are associated with a status, in this case \texttt{Accepting Contribution} (Figure~\ref{fig:post2} Middle).
+in SoliGity are associated with a status, in this case \textit{Accepting Contribution} (Figure~\ref{fig:post2} Middle).
 The issues created within SoliGity will also be propagated to GitHub (Figure~\ref{fig:post2} Right).
 Issues created outside SoliGity are not applicable to the rewarding mechanism.
 
@@ -386,7 +385,7 @@ Issues created outside SoliGity are not applicable to the rewarding mechanism.
 As a contributor, Bob browses through all the available projects posted on the Project Catalog and
 chooses the projects he would like to be part of. In this case, he decides to work on the \texttt{covid19model},
 so the website takes him to the project description page, where he could find the issues with status
-\texttt{Accepting Contribution} created by Alice earlier (Figure~\ref{fig:discover1} Left and Middle).
+\textit{Accepting Contribution} created by Alice earlier (Figure~\ref{fig:discover1} Left and Middle).
 Once Bob decides to make contributions, he can fork the project into his own GitHub account by pressing
 the \textit{Fork} button (Figure~\ref{fig:discover1} Middle and Right). The \textit{Fork} button is a
 shortcut that invokes the GitHub API.
@@ -466,16 +465,15 @@ of human errors.
 
 \section{Reflection}
 
-From a technical standpoint, one significant challenge is to integrate Git into our application, we decided to
-use \texttt{octokit/rest.js} (\url{https://octokit.github.io/rest.js/v17/}), which is a GitHub REST API client for
-JavaScript. We could use it to perfrom variou actions on our application such as creating issues, closing issues,
+From a technical standpoint, one significant challenge we faced is to integrate Git into our application. We decided to use \texttt{octokit/rest.js} (\url{https://octokit.github.io/rest.js/v17/}), which is a GitHub REST API client for
+JavaScript. We could use it to perform various actions on our application such as creating issues, closing issues,
 forking repositories, creating pull requests, approving and merging pull requests, and rejecting pull requests.
-To use \texttt{octokit/rest.js}, we have to login with our GitHub username and password. However, now we only
+To use \texttt{octokit/rest.js}, we have to login with our GitHub username and password. However, currently we only
 support manually inputting GitHub username and password in the SoliGity to establish the connection. We created
 2 GitHub test accounts to test out the relevant GitHub APIs to ensure they work properly. Another trivial but
 necessary work is to make sure the website prompts for user account and store the information in the backend.
 We define endpoints in the backend server, like creating new username, updating user information, and various GitHub
-a ctions mentioned above so that the request can be sent from frontend to backend APIs.
+actions mentioned above so that the request can be sent from frontend to backend APIs.
 
 We made it possible that after logging in and associate their individual GitHub Account, users are able to obtain
 separate lists of their own repositories, which are only visible to themselves. However, once users are logged
@@ -488,7 +486,7 @@ the Project Catalog page also takes advantage of blockchain technology, making i
 
 One important takeaway of this project is problem identification: the most challenging, and most important stage
 of a project is to identify the right problem, before looking for solutions. Especially for technologies like
-Blockchain, a lot of the use cases and applications are remain unknown or underdeveloped. We started by asking
+Blockchain, a lot of use cases and applications remain unknown or underdeveloped. We started by asking
 ourselves how this technology can solve problems that we, as students, are likely to encounter at university.
 By relating to ourselves as well as surveying our peers, it seems obvious to us that most of us have had a
 challenging time getting prepared for the job market. As most of us have been working on software projects with
@@ -497,7 +495,7 @@ several rounds of discussions and refinements that finally becomes the working p
 
 During the execution of the project, we also faced challenges in communication - due to the COVID-19 pandemic,
 all of the work had to happen remotely, and the lack of face-to-face conversation in front of a whiteboard made
-it inconvenient to communicate some details about the implementation. This caused some asynchronous communications
+it inconvenient to communicate some details about the implementation. This also caused some asynchronous communications
 between members. For example, as GitHub is an asynchronous collaboration tool - when one person started working
 on the project, everyone else cannot obtain real-time updates and provide immediate feedback until the commit
 was pushed to the remote repository. Therefore, we had to go back and forth to make sure the design and implementation
@@ -512,36 +510,28 @@ Overall, this is a challenging, but rewarding experience that taught us technica
 skills. We appreciate all the support and feedback that our professor and classmates have given.
 
 \section{Future Work}
+Due to time constraints, our prototype uses a centralized database in the backend to store SoliGity username and password as well as GitHub username and password. However, if we want to deploy this application to the public, users' GitHub username and password should not be stored on a single server. We should replace this centralized database with i) OAuth with GitHub to receive an access token for our application \cite{github_developer}; ii) Login with MetaMask \cite{martiny_2018}. Doing so eliminates the need for saving any user information in a centralized database for privacy and security considerations.
 
-SoliGity is not a fully decentralized application, since it contains a centralized database in the backend, which
-is used to store SoliGity username and password, and GitHub username and password. This application is for demo
-purpose only, thus we directly use a database to save user's GitHub information. However, if we want to publish
-this application, we should not manager a user's GitHub username and password, because of some privacy and security
-issues. Therefore, we should get rid of this centralized database, and we have two things to do i) support OAuth
-with Githubt to receive an access token for our application \cite{github_developer}; ii) support Login with MetaMask
-\cite{martiny_2018}. Therefore, we don't need to save any information for users in our backend.
+% SoliGity is not a fully decentralized application, since it contains a centralized database in the backend, which
+% is used to store SoliGity username and password, and GitHub username and password. This application is for demo
+% purpose only, thus we directly use a database to save user's GitHub information. However, if we want to publish this application, we should not manager a user's GitHub username and password, because of some privacy and security
+% issues. 
 
-We could support more GitHub actions in the SoliGity to improve our user experience, for example, to make more
-interactions between project owner and contributor, we could support that the project owner could leave comment
-in the participant's pull request in the SoliGity to tell participant how to improve their works before rejecting
-their pull request.
-
-To enrich the content of our Project Catalog page by incorporating multimedia such as pictures, videos, etc. so
-that it will provide a higher fidelity project browsing experience similar to an App Store to attract people to
-work on open source projects.
+We could support more GitHub actions in SoliGity to improve our user experience. For example, to encourage more
+interactions between project owners and contributors, we could integrate code review functionalities such as commenting to allow project owners to provide feedback about contributor's pull requests to inform participants how to improve their works. We will also enrich the content of our Project Catalog page by incorporating multimedia such as pictures, videos, etc. so that it will provide a higher fidelity project browsing experience similar to an App Store to attract people to work on open-source projects.
 
 Our existing prototype only allows one developer to claim an issue - once an issue is claimed by one contributor,
 no one else is allowed to make commitments. In the long term, we need to upgrade our smart contract to be able to
-support more than one request review. This is because in reality, a popular project may attract thousands of
+support more than one request review. This is because, in reality, a popular project may attract thousands of
 developers to do one task. More sophisticated rewarding mechanisms can be incorporated to help the owner decide
-and send the bounty to those who deliver the highest quality work. This is like a call-for-tender process, and
-will create a health competition among developers and motivate them to deliver their best share of work.
+and send the bounty to those who deliver the highest quality work. This is like a call-for-tender process and
+will create a healthy competition among developers and motivate them to deliver their best share of work.
 
 In addition, we wish to establish a connection between the project owner and company recruiters in addition to
 sending the incentive to contributors. This allows the developer to receive additional recognition that can
 potentially lead them to their dream jobs.
 
-Finally, our team will also need to study how to deploy the contract in the Ethereum’s main network and design
+Finally, our team will also need to study how to deploy the contract in Ethereum’s main network and design
 tasks to find out potential risks (such as hackers that try to bypass system requests) in our contracts to avoid
 system failures.
 
@@ -642,9 +632,9 @@ effect to impact broader and more diverse communities.
 		\begin{tabular}{| C{2cm} | C{4cm} | C{4cm} | C{4cm} |}
 			\hline
 			\textbf{Index} & \textbf{Percentage} & \textbf{Signature} & \textbf{Date} \\ \hline
-			1              &                     &                    &               \\ \hline
-			2              &                     &                    &               \\ \hline
-			3              &                     &                    &               \\ \hline
+			1              &  40 \%              &                    &  2020-04-20   \\ \hline
+			2              &  30 \%              &                    &  2020-04-20   \\ \hline
+			3              &  30 \%              &                    &  2020-04-20   \\ \hline
 			4              &                     &                    &               \\ \hline
 			5              &                     &                    &               \\ \hline
 		\end{tabular}
